@@ -127,18 +127,17 @@
 
 <script src="games-data.js"></script>
 <script>
-document.addEventListener("gamesDataLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById('popular-games-grid');
     if (!grid) return;
     
-    // ดึง 4 เกมแรกที่ได้จาก IGDB API มาแสดงผล
-    const gamesArray = Object.entries(gamesDatabase).map(([id, game]) => ({ id, ...game }));
-    const popularGames = gamesArray.slice(0, 4); 
+    const popularKeys = ['assetto-corsa-evo', 'beamng-drive', 'cyberpunk-2077', 'elden-ring'];
     
-    grid.innerHTML = popularGames.map((game, index) => {
+    grid.innerHTML = popularKeys.map((id, index) => {
+        const game = gamesDatabase[id];
         const delay = index * 0.1;
         return `
-        <a class="game-card" style="animation-delay: ${delay}s;" data-category="${game.category.toLowerCase()}" data-name="${game.name}" href="game-detail.html?game=${game.id}">
+        <a class="game-card" style="animation-delay: ${delay}s;" data-category="${game.category.toLowerCase()}" data-name="${game.name}" href="game-detail.html?game=${id}">
             <div class="game-cover">
                 <img src="${game.image}" alt="${game.name}">
             </div>
@@ -151,37 +150,6 @@ document.addEventListener("gamesDataLoaded", () => {
         `;
     }).join('');
 });
-function renderIndex() {
-    const grid = document.getElementById('popular-games-grid');
-    if (!grid) return;
-    
-    // ดึงมาจาก Global Variable (ใช้ window.gamesDatabase)
-    const gamesArray = Object.entries(window.gamesDatabase).map(([id, game]) => ({ id, ...game }));
-    const popularGames = gamesArray.slice(0, 4); 
-    
-    grid.innerHTML = popularGames.map((game, index) => {
-        const delay = index * 0.1;
-        return `
-        <a class="game-card" style="animation-delay: ${delay}s;" href="game-detail.html?game=${game.id}">
-            <div class="game-cover">
-                <img src="${game.image}" alt="${game.name}">
-            </div>
-            <div class="game-info">
-                <span class="tag">${game.platform.toUpperCase()}</span>
-                <h3>${game.name}</h3>
-                <p>${game.description}</p>
-            </div>
-        </a>
-        `;
-    }).join('');
-}
-
-// เช็กว่าถ้าข้อมูลโหลดเสร็จแล้วให้เรนเดอร์เลย ถ้ายังให้รอสัญญาณ
-if (window.isGamesDataLoaded) {
-    renderIndex();
-} else {
-    document.addEventListener("gamesDataLoaded", renderIndex);
-}
 </script>
 <script src="chatbot-widget.js"></script>
 <script src="chatbot.js"></script>

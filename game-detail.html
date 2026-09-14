@@ -40,52 +40,49 @@ function specTable(title, values) {
     return `<h3>${title}</h3><table class="spec-table">${labels.map((l, i) => `<tr><td>${l}</td><td>${values[i]}</td></tr>`).join('')}</table>`;
 }
 
-// รอจนกว่า Vercel API จะโหลดข้อมูลเกมใส่ gamesDatabase เสร็จสิ้น
-document.addEventListener("gamesDataLoaded", () => {
-    const key = new URLSearchParams(location.search).get('game');
-    const game = gamesDatabase[key];
-    const detail = document.getElementById('detail');
+const key = new URLSearchParams(location.search).get('game');
+const game = gamesDatabase[key];
+const detail = document.getElementById('detail');
 
-    if (!game) {
-        detail.innerHTML = `<div class="detail-box"><h2>ไม่พบข้อมูลเกม</h2><p class="detail-subtitle">กรุณากลับไปเลือกเกมจากหน้าคลังเกมอีกครั้ง</p><br><a class="btn" href="games.html">${icons.back} กลับคลังเกม</a></div>`;
-    } else {
-        document.title = `GAMEZONE - ${game.name}`;
-        
-        detail.innerHTML = `
-            <a class="detail-back" href="games.html">${icons.back} กลับคลังเกม</a>
-            <section class="detail-hero">
-                <div class="detail-icon">
-                    <img src="${game.image}" alt="${game.name}">
+if (!game) {
+    detail.innerHTML = `<div class="detail-box"><h2>ไม่พบข้อมูลเกม</h2><p class="detail-subtitle">กรุณากลับไปเลือกเกมจากหน้าคลังเกมอีกครั้ง</p><br><a class="btn" href="games.html">${icons.back} กลับคลังเกม</a></div>`;
+} else {
+    document.title = `GAMEZONE - ${game.name}`;
+    
+    detail.innerHTML = `
+        <a class="detail-back" href="games.html">${icons.back} กลับคลังเกม</a>
+        <section class="detail-hero">
+            <div class="detail-icon">
+                <img src="${game.image}" alt="${game.name}">
+            </div>
+            <div>
+                <span class="tag">${game.category}</span>
+                <h1 class="detail-title">${game.name}</h1>
+                <p class="detail-subtitle">${game.description}</p>
+                <div class="detail-meta">
+                    <span>${icons.platform} ${game.platform}</span>
+                    <span>${icons.company} ${game.developer}</span>
+                    <span>${icons.date} ${game.year}</span>
                 </div>
-                <div>
-                    <span class="tag">${game.category}</span>
-                    <h1 class="detail-title">${game.name}</h1>
-                    <p class="detail-subtitle">${game.description}</p>
-                    <div class="detail-meta">
-                        <span>${icons.platform} ${game.platform}</span>
-                        <span>${icons.company} ${game.developer}</span>
-                        <span>${icons.date} ${game.year}</span>
-                    </div>
-                    <div class="detail-score">
-                        ${icons.star} ${game.score} / 10
-                    </div>
+                <div class="detail-score">
+                    ${icons.star} ${game.score} / 10
                 </div>
-            </section>
-            <section class="detail-grid">
-                <div class="detail-box">
-                    <h2>จุดเด่นของเกม</h2>
-                    <ul class="feature-list">${game.features.map(x => `<li>${x}</li>`).join('')}</ul>
-                    <div class="detail-note">หมายเหตุ: ข้อมูลสเปกในหน้านี้เป็นข้อมูลเบื้องต้น/โดยประมาณ ควรตรวจสอบกับผู้พัฒนาเกมอีกครั้งก่อนติดตั้ง</div>
-                </div>
-                <div class="detail-box">
-                    <h2>สเปกโดยประมาณ</h2>
-                    ${specTable('ขั้นต่ำ', game.min)}<br>
-                    ${specTable('แนะนำ', game.rec)}
-                </div>
-            </section>
-        `;
-    }
-});
+            </div>
+        </section>
+        <section class="detail-grid">
+            <div class="detail-box">
+                <h2>จุดเด่นของเกม</h2>
+                <ul class="feature-list">${game.features.map(x => `<li>${x}</li>`).join('')}</ul>
+                <div class="detail-note">หมายเหตุ: ข้อมูลสเปกในหน้านี้เป็นข้อมูลเบื้องต้น/โดยประมาณ ควรตรวจสอบกับผู้พัฒนาเกมอีกครั้งก่อนติดตั้ง</div>
+            </div>
+            <div class="detail-box">
+                <h2>สเปกโดยประมาณ</h2>
+                ${specTable('ขั้นต่ำ', game.min)}<br>
+                ${specTable('แนะนำ', game.rec)}
+            </div>
+        </section>
+    `;
+}
 </script>
 <script src="chatbot-widget.js"></script>
 <script src="chatbot.js"></script>
