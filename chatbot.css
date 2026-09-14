@@ -122,6 +122,9 @@
     font-size: 13.5px;
     line-height: 1.55;
     white-space: pre-wrap;
+    /* เพิ่ม 2 บรรทัดนี้เพื่อบังคับตัดลิงก์ยาวๆ ไม่ให้ล้นกรอบ */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     /* แอนิเมชันข้อความเด้งขึ้นมาทีละอัน */
     opacity: 0;
     animation: msgPopIn 0.3s ease-out forwards;
