@@ -823,14 +823,14 @@ const gamesDatabase = {
     },
     "heavy-rain": { 
         name: "Heavy Rain", platform: "PC / Console", category: "ADVENTURE", score: "8.5", developer: "Quantic Dream", year: "2019", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222120/header.jpg", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960910/header.jpg", 
         description: "สืบคดีฆาตกร Origami Killer ผ่านมุมมองของตัวละคร 4 คน", 
         features: ["ระทึกขวัญสืบสวน", "ตัวละครตายได้โดยเกมไม่จบ", "ระบบ Quick Time Event", "ฉากจบหลายแบบ", "บรรยากาศอึมครึม"], 
         min: ["Intel Core i5-4430", "4 GB", "GTX 660", "35 GB", "Windows 10"], rec: ["Intel Core i5-6600K", "8 GB", "GTX 970", "35 GB", "Windows 10"] 
     },
     "beyond-two-souls": { 
         name: "Beyond: Two Souls", platform: "PC / Console", category: "ADVENTURE", score: "8.2", developer: "Quantic Dream", year: "2019", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222130/header.jpg", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960990/header.jpg", 
         description: "ชีวิตของ Jodie หญิงสาวที่มีพลังวิญญาณลึกลับผูกติดอยู่กับตัว", 
         features: ["นักแสดงฮอลลีวูด (Elliot Page, Willem Dafoe)", "เล่นสลับระหว่างมนุษย์และวิญญาณ", "เนื้อเรื่องกินเวลานานหลายปี", "เล่น Co-op แบบ 2 คนได้", "ทางเลือกมีผลต่อเรื่อง"], 
         min: ["Intel Core i5-4430", "4 GB", "GTX 660", "49 GB", "Windows 10"], rec: ["Intel Core i5-6600K", "8 GB", "GTX 970", "49 GB", "Windows 10"] 
