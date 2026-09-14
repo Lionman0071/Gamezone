@@ -931,28 +931,28 @@ const gamesDatabase = {
     },
     "death-stranding-2": { 
         name: "Death Stranding 2: On The Beach", platform: "PC / Console", category: "ACTION", score: "9.1", developer: "Kojima Productions", year: "2026", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/header.jpg", 
+        image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3280350/6270c77b0729e2df0a17d660286eeddfd9169386/header.jpg?t=1774022345", 
         description: "สานต่อภารกิจของ Sam Bridges สู่การเดินทางข้ามทวีปที่เต็มไปด้วยกลไกและปมปริศนาสุดล้ำเหนือจินตนาการ", 
         features: ["เนื้อเรื่องล้ำลึกซับซ้อนตามสไตล์โคจิม่า", "การเดินทางสำรวจและสร้างเส้นทางข้ามทวีป", "ระบบปฏิสัมพันธ์กับผู้เล่นคนอื่น", "ฉากคัตซีนเสมือนภาพยนตร์", "กราฟิกสภาพแวดล้อมที่สมจริงยิ่งขึ้น"], 
         min: ["Intel Core i5-8400", "16 GB", "GTX 1060", "80 GB", "Windows 10"], rec: ["Intel Core i7-10700K", "16 GB", "RTX 3060", "80 GB", "Windows 11"] 
     },
     "forza-horizon-6": { 
         name: "Forza Horizon 6", platform: "PC / Console", category: "RACING", score: "9.0", developer: "Playground Games", year: "2026", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2483190/header.jpg", 
+        image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2483190/a3f1465050b6103274991a29b7462d3f28918b5d/header_alt_assets_4.jpg?t=1788887415", 
         description: "ซิ่งสุดมันส์ในเทศกาลแข่งขันรถ Open World ภาคใหม่ล่าสุด ที่อัปเกรดสภาพแวดล้อมใหม่ทั้งหมด", 
         features: ["รถแข่งลิขสิทธิ์ระดับไฮเอนด์นับร้อยคัน", "ขับขี่อิสระแบบ Open World ขนาดใหญ่", "ระบบสภาพอากาศแบบ Live Track", "อีเวนต์แข่งขันหลากหลายโหมด", "แต่งรถและจูนเครื่องได้ละเอียดยิบ"], 
         min: ["Intel Core i5-8400", "16 GB", "GTX 1070", "150 GB", "Windows 10"], rec: ["Intel Core i7-12700K", "32 GB", "RTX 4070", "150 GB", "Windows 11"] 
     },
     "pragmata": { 
         name: "Pragmata", platform: "PC / Console", category: "ACTION", score: "8.8", developer: "Capcom", year: "2026", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3357650/header.jpg", 
+        image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3357650/e32e168b25ed68a0cf6264c220c07e96c2abfb56/header.jpg?t=1777351016", 
         description: "ผจญภัยแอ็กชันไซไฟบนสภาพแวดล้อมของดวงจันทร์ ในโลกดิสโทเปียสุดล้ำที่ล่มสลาย", 
         features: ["เนื้อเรื่องไซไฟผจญภัยลึกลับ", "อาวุธไฮเทคและชุดเกราะอวกาศ", "การเดินทางร่วมกับเด็กหญิงปริศนา", "สภาพแวดล้อมไร้แรงโน้มถ่วง", "ฉากแอ็กชันปะทะหุ่นยนต์ยักษ์"], 
         min: ["Intel Core i5-9600K", "16 GB", "GTX 1660 Ti", "100 GB", "Windows 10"], rec: ["Intel Core i7-11700K", "32 GB", "RTX 3070", "100 GB", "Windows 11"] 
     },
     "ac-black-flag-resynced": { 
         name: "Assassin's Creed Black Flag Resynced", platform: "PC / Console", category: "ADVENTURE", score: "8.4", developer: "Ubisoft", year: "2026", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/header.jpg", 
+        image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3751950/9b046115b1663a4be2b252712328e4f6c162da68/header.jpg?t=1787915122", 
         description: "รีเมคตำนานภาคโจรสลัดที่ยกระดับกราฟิก ระบบเดินเรือ และกลไกการลอบสังหารให้ล้ำสมัยเทียบเท่าเกมยุคปัจจุบัน", 
         features: ["กราฟิกรีเมคใหม่ยกแผง", "สงครามทางเรือและการปล้นสะดมสุดมันส์", "ท่วงท่าลอบสังหารที่คล่องตัวขึ้น", "ออกสำรวจเกาะและมหาสมุทรแคริบเบียน", "อัปเกรดเรือแจ็คดอว์ของตนเอง"], 
         min: ["Intel Core i5-9600K", "16 GB", "GTX 1060", "120 GB", "Windows 10"], rec: ["Intel Core i7-12700K", "32 GB", "RTX 3070", "120 GB", "Windows 11"] 
