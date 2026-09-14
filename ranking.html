@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMEZONE - จัดอันดับเกม</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="chatbot.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<a class="logo" href="index.html">GAME<span>ZONE</span></a>
+<nav class="menu">
+<a href="index.html">หน้าแรก</a>
+<a href="games.html">คลังเกม</a>
+<a class="active" href="ranking.html">จัดอันดับเกม</a>
+</nav>
+</header>
+
+<section class="page-header">
+<p>GAME RANKING</p>
+<h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+    </svg>
+    จัดอันดับเกมยอดนิยม
+</h1>
+<span>รวมเกมที่ได้คะแนนสูงสุดจากผู้เล่นและนักวิจารณ์</span>
+</section>
+
+<section class="section">
+<div class="ranking-tabs">
+<button class="ranking-tab active" data-platform="all">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> ทั้งหมด
+</button>
+<button class="ranking-tab" data-platform="pc">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg> PC
+</button>
+<button class="ranking-tab" data-platform="console">
+    <!-- ไอคอนจำลองจอยสติ๊กสำหรับ Console (เผื่ออนาคตเพิ่มเกมคอนโซล) -->
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4"/><path d="M8 10v4"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/></svg> Console
+</button>
+</div>
+
+<div class="ranking-list" id="rankingList">
+</div>
+</section>
+
+<footer>
+<div class="footer-logo">GAME<span>ZONE</span></div>
+<p>เว็บไซต์คลังข้อมูลเกม PC และ Console</p>
+<p class="copyright">© 2026 GAMEZONE. All Rights Reserved.</p>
+</footer>
+
+<script src="games-data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const list = document.getElementById("rankingList");
+    const tabs = document.querySelectorAll(".ranking-tab");
+
+    // เรียงคะแนนจากมากไปน้อย แล้วตัดมาแค่ 10 อันดับแรก
+    const top10Games = Object.entries(gamesDatabase)
+        .map(([id, game]) => ({ id, ...game }))
+        .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
+        .slice(0, 10);
+
+    function renderList(filter) {
+        let rank = 1;
+        list.innerHTML = top10Games
+            .filter(item => filter === 'all' || item.platform.toLowerCase() === filter)
+            .map(item => `
+                <a class="ranking-item" data-platform="${item.platform.toLowerCase()}" href="game-detail.html?game=${item.id}">
+                    <div class="rank-number">${rank++}</div>
+                    <div class="rank-icon">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="rank-info">
+                        <span class="tag">${item.platform.toUpperCase()}</span>
+                        <h3>${item.name}</h3>
+                        <p>${item.category} / ${item.developer}</p>
+                    </div>
+                    <div class="score">
+                        <strong>${item.score}</strong><span>/10</span>
+                    </div>
+                </a>
+            `).join('');
+    }
+
+    renderList('all');
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+            renderList(this.dataset.platform);
+        });
+    });
+});
+</script>
+<script src="chatbot-widget.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

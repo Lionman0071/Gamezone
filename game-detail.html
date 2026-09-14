@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMEZONE - รายละเอียดเกม</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">GAME<span>ZONE</span></a>
+<nav class="menu">
+<a href="index.html">หน้าแรก</a>
+<a href="games.html">คลังเกม</a>
+<a href="ranking.html">จัดอันดับเกม</a>
+</nav>
+</header>
+
+<main class="game-detail" id="detail"></main>
+
+<footer>
+<div class="footer-logo">GAME<span>ZONE</span></div>
+<p>เว็บไซต์คลังข้อมูลเกม PC และ Console</p>
+<p class="copyright">© 2026 GAMEZONE. All Rights Reserved.</p>
+</footer>
+
+<script src="games-data.js"></script>
+<script>
+const icons = {
+    back: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>`,
+    platform: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4"/><path d="M8 10v4"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/></svg>`,
+    company: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>`,
+    date: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+    star: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ffd166; fill: #ffd166;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+};
+
+const key = new URLSearchParams(location.search).get('game');
+const game = gamesDatabase[key];
+const detail = document.getElementById('detail');
+
+// สำหรับ PC/Console สเปกเครื่องจะใช้เทมเพลตเหมือนกันหมดแล้ว
+function specTable(title, values) {
+    const labels = ['CPU', 'RAM', 'GPU', 'พื้นที่ว่าง', 'ระบบปฏิบัติการ'];
+    return `<h3>${title}</h3><table class="spec-table">${labels.map((l, i) => `<tr><td>${l}</td><td>${values[i]}</td></tr>`).join('')}</table>`;
+}
+
+if (!game) {
+    detail.innerHTML = `<div class="detail-box"><h2>ไม่พบข้อมูลเกม</h2><p class="detail-subtitle">กรุณากลับไปเลือกเกมจากหน้าคลังเกมอีกครั้ง</p><br><a class="btn" href="games.html">${icons.back} กลับคลังเกม</a></div>`;
+} else {
+    document.title = `GAMEZONE - ${game.name}`;
+    
+    // ตั้งค่าให้ลิงก์กลับไปที่หน้าคลังเกมเสมอ
+    detail.innerHTML = `
+        <a class="detail-back" href="games.html">${icons.back} กลับคลังเกม</a>
+        <section class="detail-hero">
+            <div class="detail-icon">
+                <img src="${game.image}" alt="${game.name}">
+            </div>
+            <div>
+                <span class="tag">${game.category}</span>
+                <h1 class="detail-title">${game.name}</h1>
+                <p class="detail-subtitle">${game.description}</p>
+                <div class="detail-meta">
+                    <span>${icons.platform} ${game.platform}</span>
+                    <span>${icons.company} ${game.developer}</span>
+                    <span>${icons.date} ${game.year}</span>
+                </div>
+                <div class="detail-score">
+                    ${icons.star} ${game.score} / 10
+                </div>
+            </div>
+        </section>
+        <section class="detail-grid">
+            <div class="detail-box">
+                <h2>จุดเด่นของเกม</h2>
+                <ul class="feature-list">${game.features.map(x => `<li>${x}</li>`).join('')}</ul>
+                <div class="detail-note">หมายเหตุ: ข้อมูลสเปกในหน้านี้เป็นข้อมูลเบื้องต้น/โดยประมาณ ควรตรวจสอบกับผู้พัฒนาเกมอีกครั้งก่อนติดตั้ง</div>
+            </div>
+            <div class="detail-box">
+                <h2>สเปกโดยประมาณ</h2>
+                ${specTable('ขั้นต่ำ', game.min)}<br>
+                ${specTable('แนะนำ', game.rec)}
+            </div>
+        </section>
+    `;
+}
+</script>
+<script src="chatbot-widget.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

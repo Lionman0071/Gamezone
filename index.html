@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMEZONE - หน้าแรก</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="chatbot.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<a class="logo" href="index.html">
+        GAME<span>ZONE</span>
+</a>
+<nav class="menu">
+<a class="active" href="index.html">หน้าแรก</a>
+<a href="games.html">คลังเกม</a>
+<a href="ranking.html">จัดอันดับเกม</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<p class="small-title">WELCOME TO GAMEZONE</p>
+<h1>โลกของเกม<br/><span>ที่รวมไว้ในที่เดียว</span></h1>
+<p>พบกับเกม PC และ Console ที่น่าสนใจ พร้อมสเปกเครื่อง ข้อมูลเกมยอดนิยม และการจัดอันดับสำหรับเกมเมอร์ตัวจริง</p>
+<div class="hero-buttons">
+<a class="btn" href="games.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+        </svg>
+        ดูคลังเกมทั้งหมด
+    </a>
+<a class="btn btn-outline" href="ranking.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+            <path d="M4 22h16"/>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+        </svg>
+        จัดอันดับเกม
+    </a>
+</div>
+</div>
+<div class="hero-game">
+<div class="controller">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="4"/>
+                <path d="M6 12h4"/>
+                <path d="M8 10v4"/>
+                <line x1="15" y1="13" x2="15.01" y2="13"/>
+                <line x1="18" y1="11" x2="18.01" y2="11"/>
+            </svg>
+        </div>
+<h2>GAMEZONE</h2>
+<p>PC & CONSOLE LIBRARY</p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">
+<p>EXPLORE MORE</p>
+<h2>หมวดหมู่หลัก</h2>
+</div>
+<div class="category-grid">
+<!-- ลดเหลือแค่หมวดหมู่หลัก คลังเกม และ จัดอันดับเกม ให้ดูคลีนขึ้น -->
+<a class="category-card" href="games.html" style="grid-column: span 1;">
+<div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="2" y1="20" x2="22" y2="20"/>
+                </svg>
+            </div>
+<h3>คลังเกม PC & Console</h3>
+<p>รวมเกมฮิตหลากสไตล์ พร้อมข้อมูลสเปกที่ต้องรู้</p>
+</a>
+<a class="category-card" href="ranking.html" style="grid-column: span 2;">
+<div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                    <path d="M4 22h16"/>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+            </div>
+<h3>จัดอันดับเกมยอดนิยม</h3>
+<p>เช็กคะแนนรีวิวและอันดับเกมที่น่าเล่นที่สุดในขณะนี้</p>
+</a>
+</div>
+</section>
+
+<section class="section dark-section">
+<div class="section-title">
+<p>POPULAR GAMES</p>
+<h2>เกมแนะนำ</h2>
+</div>
+<div class="game-grid" id="popular-games-grid">
+</div>
+</section>
+
+<section class="banner">
+<p>DISCOVER YOUR NEXT GAME</p>
+<h2>ค้นหาเกมที่ใช่สำหรับคุณ</h2>
+<a class="btn" href="ranking.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+        <path d="M4 22h16"/>
+        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+    </svg>
+    ดูอันดับเกม
+</a>
+</section>
+
+<footer>
+<div class="footer-logo">GAME<span>ZONE</span></div>
+<p>เว็บไซต์คลังข้อมูลเกม PC และ Console</p>
+<p class="copyright">© 2026 GAMEZONE. All Rights Reserved.</p>
+</footer>
+
+<script src="games-data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById('popular-games-grid');
+    if (!grid) return;
+    
+    // เปลี่ยนจาก genshin-impact เป็นเกม PC เพื่อความต่อเนื่อง (ผมเปลี่ยนเป็น cyberpunk-2077 กับ elden-ring ให้)
+    const popularKeys = ['assetto-corsa-evo', 'beamng-drive', 'cyberpunk-2077', 'elden-ring'];
+    
+    grid.innerHTML = popularKeys.map((id, index) => {
+        const game = gamesDatabase[id];
+        const delay = index * 0.1;
+        return `
+        <a class="game-card" style="animation-delay: ${delay}s;" data-category="${game.category.toLowerCase()}" data-name="${game.name}" href="game-detail.html?game=${id}">
+            <div class="game-cover">
+                <img src="${game.image}" alt="${game.name}">
+            </div>
+            <div class="game-info">
+                <span class="tag">${game.platform.toUpperCase()}</span>
+                <h3>${game.name}</h3>
+                <p>${game.description}</p>
+            </div>
+        </a>
+        `;
+    }).join('');
+});
+</script>
+<script src="chatbot-widget.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

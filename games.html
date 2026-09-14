@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMEZONE - คลังเกม</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="chatbot.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<a class="logo" href="index.html">GAME<span>ZONE</span></a>
+<nav class="menu">
+<a href="index.html">หน้าแรก</a>
+<a class="active" href="games.html">คลังเกม</a>
+<a href="ranking.html">จัดอันดับเกม</a>
+</nav>
+</header>
+
+<section class="page-header">
+<p>GAMES LIBRARY</p>
+<h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/>
+    </svg>
+    คลังเกมทั้งหมด
+</h1>
+<span>รวมเกม PC และ Console น่าเล่นที่คัดมาแล้ว</span>
+</section>
+
+<section class="section">
+<div class="search-box">
+<input id="gameSearch" placeholder="🔎 ค้นหาชื่อเกม..." type="text"/>
+</div>
+
+<div class="filter-buttons">
+<button class="game-filter active" data-filter="all">ทั้งหมด</button>
+<button class="game-filter" data-filter="racing">RACING</button>
+<button class="game-filter" data-filter="action">ACTION</button>
+<button class="game-filter" data-filter="simulation">SIMULATION</button>
+<button class="game-filter" data-filter="rpg">RPG</button>
+<button class="game-filter" data-filter="adventure">ADVENTURE</button>
+<button class="game-filter" data-filter="sport">SPORT</button>
+</div>
+
+<div class="game-grid" id="gamesLibrary">
+</div>
+<p class="no-result" id="noGameResult">ไม่พบเกมที่ค้นหา</p>
+</section>
+
+<footer>
+<div class="footer-logo">GAME<span>ZONE</span></div>
+<p>เว็บไซต์คลังข้อมูลเกม PC และ Console</p>
+<p class="copyright">© 2026 GAMEZONE. All Rights Reserved.</p>
+</footer>
+
+<script src="games-data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("gamesLibrary");
+    const gameSearch = document.getElementById("gameSearch");
+    const gameFilters = document.querySelectorAll(".game-filter");
+    let currentFilter = "all";
+    
+    // ดึงข้อมูลเกมทั้งหมดมาแสดง (ตัด Mobile ทิ้งไปได้เลย)
+    const gamesArray = Object.entries(gamesDatabase).map(([id, game]) => ({ id, ...game }));
+
+    // ฟังก์ชันสร้างการ์ดใหม่ (ล้างไพ่แล้วแจกใหม่)
+    function renderGames() {
+        const search = gameSearch.value.toLowerCase();
+        
+        // กรองข้อมูลตามที่ค้นหาและหมวดหมู่
+        const filteredGames = gamesArray.filter(game => {
+            const matchSearch = game.name.toLowerCase().includes(search);
+            const matchCategory = currentFilter === "all" || game.category.toLowerCase() === currentFilter;
+            return matchSearch && matchCategory;
+        });
+
+        if (filteredGames.length > 0) {
+            grid.innerHTML = filteredGames.map((game, index) => {
+                const delay = index * 0.05; // ดีเลย์ 0.05 วินาที
+                return `
+                <a class="game-card" style="animation-delay: ${delay}s;" href="game-detail.html?game=${game.id}">
+                    <div class="game-cover">
+                        <img src="${game.image}" alt="${game.name}">
+                    </div>
+                    <div class="game-info">
+                        <span class="tag">${game.category.toUpperCase()}</span>
+                        <h3>${game.name}</h3>
+                        <p>${game.description}</p>
+                    </div>
+                </a>
+                `;
+            }).join('');
+            document.getElementById("noGameResult").style.display = "none";
+        } else {
+            grid.innerHTML = "";
+            document.getElementById("noGameResult").style.display = "block";
+        }
+    }
+
+    // แจกไพ่ครั้งแรกตอนโหลดหน้าเว็บ
+    renderGames();
+
+    // แจกไพ่ใหม่เมื่อพิมพ์ค้นหา
+    gameSearch.addEventListener("input", renderGames);
+
+    // แจกไพ่ใหม่เมื่อกดเปลี่ยนหมวดหมู่
+    gameFilters.forEach(button => {
+        button.addEventListener("click", function() {
+            gameFilters.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            currentFilter = this.dataset.filter;
+            renderGames();
+        });
+    });
+});
+</script>
+<script src="chatbot-widget.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

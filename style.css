@@ -1,0 +1,859 @@
+/* ========================================
+   VARIABLES & RESET
+======================================== */
+:root {
+    --bg-dark: #080b12;
+    --bg-card: rgba(18, 24, 36, 0.7);
+    --bg-nav: #0d121c;
+    --primary-red: #ff3158;
+    --primary-red-hover: #d91f45;
+    --border-color: #273247;
+    --text-main: #f5f7fb;
+    --text-muted: #9da8bb;
+    --yellow-star: #ffd166;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 7%;
+    background: var(--bg-nav);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary-red);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu a {
+    color: #d7dce5;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: var(--primary-red);
+    color: white;
+}
+
+/* ========================================
+   HERO
+======================================== */
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: radial-gradient(circle at 80% 40%, #4b1022 0%, #15101a 25%, #080b12 60%);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: var(--primary-red);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 62px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary-red);
+}
+
+.hero-content > p:not(.small-title) {
+    color: var(--text-muted);
+    font-size: 18px;
+    max-width: 570px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 25px;
+    background: var(--primary-red);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+}
+
+.btn:hover {
+    background: var(--primary-red-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 49, 88, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary-red);
+}
+
+.btn-outline:hover {
+    background: var(--primary-red);
+}
+
+/* ========================================
+   HERO GAME BOX
+======================================== */
+.hero-game {
+    width: 390px;
+    height: 390px;
+    flex-shrink: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background: linear-gradient(145deg, #161d2b, #0d121c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.controller {
+    font-size: 130px;
+    margin-bottom: 10px;
+}
+
+.controller svg {
+    width: 120px;
+    height: 120px;
+    color: var(--primary-red);
+    filter: drop-shadow(0 10px 20px rgba(255, 49, 88, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.hero-game:hover .controller svg {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.hero-game h2 {
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+
+.hero-game p {
+    color: var(--primary-red);
+    letter-spacing: 3px;
+}
+
+/* ========================================
+   SECTIONS & GRIDS
+======================================== */
+.section {
+    padding: 80px 8%;
+}
+
+.dark-section {
+    background: var(--bg-nav);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: var(--primary-red);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-top: 5px;
+}
+
+/* CATEGORY CARD */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-red);
+    background: rgba(25, 34, 51, 0.8);
+    box-shadow: 0 10px 25px rgba(255, 49, 88, 0.15);
+}
+
+.category-icon {
+    margin-bottom: 15px;
+}
+
+.category-icon svg {
+    width: 60px;
+    height: 60px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.category-card:hover .category-icon svg {
+    color: var(--primary-red);
+    transform: scale(1.1);
+}
+
+.category-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    color: var(--text-muted);
+}
+
+/* ========================================
+   GAME GRID & CARD (STEAM STYLE)
+======================================== */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    perspective: 1200px;
+}
+
+.game-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    animation: cardDeal 0.6s ease-out backwards;
+}
+
+@keyframes cardDeal {
+    0% { transform: translateY(40px) scale(0.95); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.game-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--primary-red);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 49, 88, 0.2);
+    z-index: 10;
+}
+
+/* ========================================
+   IMAGE COVERS (STEAM HEADER RATIO)
+======================================== */
+.game-cover {
+    width: 100%;
+    aspect-ratio: 460 / 215;
+    overflow: hidden;
+    position: relative;
+    background: #080b12;
+    flex-shrink: 0;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-cover img {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   GAME INFO & TYPOGRAPHY
+======================================== */
+.game-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(to bottom, #161d2b, #0d121c);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tag {
+    align-self: flex-start;
+    background: rgba(255, 49, 88, 0.15);
+    color: #ff5a78;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 49, 88, 0.3);
+}
+
+.game-info h3 {
+    font-size: 19px;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 800;
+}
+
+.game-info p {
+    color: #9da8bb;
+    font-size: 13.5px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ========================================
+   PAGE HEADERS & SEARCH
+======================================== */
+.page-header {
+    padding: 90px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, #35111d, #080b12 65%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header p {
+    color: var(--primary-red);
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.page-header span {
+    color: var(--text-muted);
+}
+
+.search-box {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-card);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(255, 49, 88, 0.15);
+}
+
+.search-box input::placeholder {
+    color: #7f8a9d;
+}
+
+/* ========================================
+   FILTERS & RANKING
+======================================== */
+.filter-buttons, .ranking-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+/* แก้ไขคลาสเป็น .game-filter ให้ตรงกับโครงสร้าง HTML ใหม่ */
+.game-filter, .ranking-tab {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: #cdd4df;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.game-filter:hover, .game-filter.active, 
+.ranking-tab:hover, .ranking-tab.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 49, 88, 0.25);
+}
+
+.no-result {
+    display: none;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px;
+    font-size: 17px;
+}
+
+/* RANKING LIST */
+.ranking-list {
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.ranking-item:hover {
+    border-color: var(--primary-red);
+    transform: translateX(8px);
+    box-shadow: -5px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.rank-number {
+    width: 45px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--yellow-star);
+}
+
+/* ภาพในหน้าจัดอันดับ */
+.rank-icon {
+    width: 75px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #121824;
+}
+
+.rank-info {
+    flex: 1;
+}
+
+.rank-info h3 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.rank-info p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.score {
+    text-align: right;
+    min-width: 70px;
+}
+
+.score strong {
+    color: var(--primary-red);
+    font-size: 27px;
+}
+
+.score span {
+    color: #8b95a5;
+}
+
+/* ========================================
+   BANNER & FOOTER
+======================================== */
+.banner {
+    padding: 90px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #45101f, #121824);
+    border-top: 1px solid var(--border-color);
+}
+
+.banner p {
+    color: var(--primary-red);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.banner h2 {
+    font-size: 42px;
+    margin: 10px 0 25px;
+}
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: #05070b;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--primary-red);
+}
+
+footer p {
+    color: #7f8a9d;
+    margin-top: 8px;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* ========================================
+   GAME DETAIL PAGE
+======================================== */
+.game-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 20px 80px;
+}
+
+.detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 22px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.detail-back:hover {
+    color: var(--primary-red);
+}
+
+.detail-hero {
+    display: grid;
+    grid-template-columns: 460px 1fr;
+    gap: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    align-items: center;
+}
+
+.detail-icon {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 460 / 215;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #080b12;
+}
+
+.detail-title {
+    font-size: clamp(32px, 4vw, 46px);
+    margin: 10px 0;
+    line-height: 1.2;
+    color: white;
+}
+
+.detail-subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.detail-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #dfe5ef;
+    font-size: 13.5px;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.02);
+}
+
+.detail-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--yellow-star);
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.detail-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.detail-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 49, 88, 0.4);
+}
+
+.detail-box h2 {
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-box h2::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 24px;
+    background: var(--primary-red);
+    border-radius: 4px;
+}
+
+.feature-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.feature-list li {
+    margin: 12px 0;
+    color: #cdd4df;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.spec-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.spec-table tr:hover {
+    background: rgba(255, 49, 88, 0.08);
+}
+
+.spec-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    font-size: 14.5px;
+}
+
+.spec-table tr:last-child td {
+    border-bottom: none;
+}
+
+.spec-table td:first-child {
+    color: var(--text-muted);
+    width: 35%;
+    font-weight: 600;
+    border-right: 1px solid var(--border-color);
+}
+
+.detail-note {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-left: 4px solid var(--primary-red);
+    background: rgba(255, 49, 88, 0.05);
+    color: var(--text-muted);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE (TABLET / MOBILE)
+======================================== */
+@media (max-width: 1100px) {
+    .game-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+    .hero-game { width: 320px; height: 320px; }
+    .detail-hero { grid-template-columns: 350px 1fr; gap: 30px; }
+}
+
+@media (max-width: 850px) {
+    .navbar { flex-direction: column; padding: 18px 20px; gap: 15px; }
+    .menu { flex-wrap: wrap; justify-content: center; }
+    .menu a { font-size: 13px; padding: 8px 10px; }
+    .hero { flex-direction: column; text-align: center; padding: 60px 5%; }
+    .hero h1 { font-size: 45px; }
+    .hero-content > p:not(.small-title) { margin: auto; }
+    .hero-buttons { justify-content: center; }
+    
+    /* แก้ปัญหา Grid ล้นขอบบนมือถือจากการตั้งค่า span */
+    .category-grid { grid-template-columns: 1fr; }
+    .category-card { grid-column: 1 / -1 !important; }
+    
+    .detail-hero { grid-template-columns: 1fr; gap: 25px; text-align: center; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .detail-meta { justify-content: center; }
+    .tag { align-self: center; }
+}
+
+@media (max-width: 550px) {
+    .section { padding: 55px 5%; }
+    .page-header { padding: 65px 20px; }
+    .page-header h1 { font-size: 36px; }
+    .hero { padding: 60px 5%; }
+    .hero h1 { font-size: 38px; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-buttons .btn { width: 220px; text-align: center; }
+    .hero-game { width: 280px; height: 280px; }
+    .controller { font-size: 90px; }
+    .hero-game h2 { font-size: 25px; }
+    .section-title h2 { font-size: 30px; }
+    .banner h2 { font-size: 32px; }
+    .ranking-item { gap: 10px; padding: 12px; }
+    .rank-number { width: 28px; font-size: 21px; }
+    .score strong { font-size: 19px; }
+    .filter-buttons { gap: 7px; }
+    .game-filter, .ranking-tab { padding: 8px 12px; font-size: 12px; }
+    .detail-title { font-size: 28px; }
+}
+
+/* ========================================
+   IMAGE AUTO-FIT (บังคับจัดกลางทุกหน้า)
+======================================== */
+.game-cover img, 
+.detail-icon img, 
+.rank-icon img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-cover img,
+.ranking-item:hover .rank-icon img {
+    transform: scale(1.1);
+}
