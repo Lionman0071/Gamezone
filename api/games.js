@@ -22,8 +22,7 @@ export default async function handler(req, res) {
     }
 
     // 3. ดึงข้อมูลจาก IGDB (เขียน Query ให้อยู่ในบรรทัดเดียว ป้องกัน IGDB อ่านค่าผิดพลาด)
-    const igdbQuery = "fields name, cover.image_id, summary, genres.name, platforms.name, total_rating, first_release_date, external_games.category, external_games.uid; where category = 0 & total_rating > 80; sort total_rating desc; limit 30;";
-
+    const igdbQuery = "fields name, cover.image_id, summary, genres.name, platforms.name, total_rating, first_release_date, external_games.category, external_games.uid; where category = 0 & cover != null & rating_count > 100; sort rating_count desc; limit 30;";
     const igdbRes = await fetch('https://api.igdb.com/v4/games', {
       method: 'POST',
       headers: {
