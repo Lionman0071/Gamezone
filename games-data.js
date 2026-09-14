@@ -885,5 +885,76 @@ const gamesDatabase = {
         description: "กีฬาเอ็กซ์ตรีมฤดูหนาวบนเทือกเขาแอลป์แบบ Open World กราฟิกหิมะสุดสมจริง", 
         features: ["สกี สโนว์บอร์ด พาราไกลดิ้ง วิงสูท", "เทือกเขาแอลป์แบบ Open World", "เล่นพร้อมกับผู้เล่นอื่นแบบไร้รอยต่อ", "ท้าทายสถิติผาดโผน", "บรรยากาศผ่อนคลายสบายตา"], 
         min: ["Intel Core i5 2400s", "6 GB", "GTX 560Ti", "25 GB", "Windows 10"], rec: ["Intel Core i7 3770K", "8 GB", "GTX 970", "25 GB", "Windows 10"] 
+    },
+    // ================= หมวดเกมออกใหม่ (Released 2025-2026) =================
+    "kingdom-come-deliverance-2": { 
+        name: "Kingdom Come: Deliverance II", platform: "PC / Console", category: "RPG", score: "9.2", developer: "Warhorse Studios", year: "2025", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1771300/header.jpg", 
+        description: "เกม Action RPG โลกเปิดสุดสมจริงที่สานต่อเรื่องราวความขัดแย้งในยุโรปยุคกลางศตวรรษที่ 15", 
+        features: ["โลกเปิดอิงประวัติศาสตร์สมจริง", "ระบบต่อสู้มุมมองบุคคลที่หนึ่ง", "NPC มีตารางชีวิตของตัวเอง", "การตัดสินใจส่งผลกระทบต่อโลกรอบตัว", "ไม่ต้องเล่นภาคแรกก็สนุกได้"], 
+        min: ["Intel Core i5-8400", "16 GB", "GTX 1060 (6GB)", "100 GB", "Windows 10"], rec: ["Intel Core i7-13700K", "32 GB", "RTX 4070", "100 GB", "Windows 10"] 
+    },
+    "monster-hunter-wilds": { 
+        name: "Monster Hunter Wilds", platform: "PC / Console", category: "RPG", score: "9.0", developer: "Capcom", year: "2025", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg", 
+        description: "ภาคล่าสุดของซีรีส์ล่ามอนสเตอร์ที่ยกระดับกราฟิกและสภาพแวดล้อมที่เปลี่ยนแปลงแบบไดนามิกตลอดเวลา", 
+        features: ["กราฟิกสุดอลังการ", "สภาพอากาศเปลี่ยนแปลงกะทันหัน", "อาวุธ 14 ชนิดคู่ใจ", "ระบบขี่สัตว์พาหนะตัวใหม่", "แผนที่ไร้รอยต่อขนาดใหญ่"], 
+        min: ["Intel Core i5-11600K", "16 GB", "RTX 2070 Super", "140 GB", "Windows 10"], rec: ["Intel Core i5-13600K", "32 GB", "RTX 4060 Ti", "140 GB", "Windows 11"] 
+    },
+    "clair-obscur-expedition-33": { 
+        name: "Clair Obscur: Expedition 33", platform: "PC / Console", category: "RPG", score: "9.1", developer: "Sandfall Interactive", year: "2025", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/header.jpg", 
+        description: "ผจญภัยในโลกแฟนตาซีกลิ่นอายฝรั่งเศสยุค Belle Époque เพื่อหยุดยั้งจิตรกรที่วาดความตาย", 
+        features: ["ระบบต่อสู้แบบเทิร์นเบสผสมกลไกเรียลไทม์", "งานภาพสุดอลังการจาก Unreal Engine 5", "เนื้อเรื่องแหวกแนวและน่าติดตาม", "อัปเกรดสกิลตัวละครอิสระ", "ดนตรีประกอบไพเราะ"], 
+        min: ["Intel Core i7-8700K", "8 GB", "GTX 1060 6 GB", "55 GB", "Windows 10"], rec: ["Intel Core i7-12700K", "16 GB", "RTX 3060 Ti 8 GB", "55 GB", "Windows 11"] 
+    },
+    "hollow-knight-silksong": { 
+        name: "Hollow Knight: Silksong", platform: "PC / Console", category: "ADVENTURE", score: "9.3", developer: "Team Cherry", year: "2025", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030300/header.jpg", 
+        description: "สวมบทเป็นเจ้าหญิง Hornet ผจญภัยฝ่าอันตรายในอาณาจักรแมลงแห่งใหม่ที่เต็มไปด้วยสายใยและเสียงเพลง", 
+        features: ["ระบบต่อสู้ว่องไวและพลิ้วไหว", "อาณาจักรแมลงแห่งใหม่ให้สำรวจ", "ระบบคราฟต์ไอเทมและอาวุธ", "ศัตรูใหม่กว่า 200 แบบ", "บอสไฟต์ท้าทายฝีมือกว่า 40 ตัว"], 
+        min: ["Intel Core i3-3240", "4 GB", "GTX 560 Ti", "8 GB", "Windows 10"], rec: ["Intel Core i5-3470", "8 GB", "GTX 1050", "8 GB", "Windows 10"] 
+    },
+    "blue-prince": { 
+        name: "Blue Prince", platform: "PC", category: "ADVENTURE", score: "9.0", developer: "Dogubomb", year: "2025", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1569580/header.jpg", 
+        description: "เกมผจญภัยไขปริศนาแนวสืบสวนและวางแผน สำรวจคฤหาสน์ Mt. Holly ที่ห้องต่างๆ สลับสับเปลี่ยนได้ทุกวัน", 
+        features: ["ปริศนาห้องซับซ้อนท้าทายความคิด", "ระบบสุ่มห้องสไตล์ Roguelike", "การเล่าเรื่องผ่านสภาพแวดล้อม", "สืบสวนหาความลับของ Room 46", "เล่นซ้ำได้หลายรอบ"], 
+        min: ["Intel Core i5-2300", "16 GB", "GTX 1060", "6 GB", "Windows 10"], rec: ["Intel Core i5-4690K", "16 GB", "GTX 1080", "6 GB", "Windows 10"] 
+    },
+    "slay-the-spire-2": { 
+        name: "Slay the Spire 2", platform: "PC", category: "RPG", score: "8.9", developer: "Mega Crit", year: "2026", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/header.jpg", 
+        description: "ภาคต่อของสุดยอดเกมสร้างเด็คการ์ดตะลุยดันเจี้ยนแนว Roguelike ที่กลับมาพร้อมศัตรูและอุปสรรคใหม่", 
+        features: ["การ์ดและตัวละครคลาสใหม่", "บอสสุดท้าทายตัวใหม่", "อีเวนต์และทางเลือกที่หลากหลายขึ้น", "ระบบอัปเกรดคอมโบเด็ค", "คุ้มค่าแก่การเล่นซ้ำร้อยชั่วโมง"], 
+        min: ["Intel Core i3", "4 GB", "GTX 750", "2 GB", "Windows 10"], rec: ["Intel Core i5", "8 GB", "GTX 1050", "2 GB", "Windows 10"] 
+    },
+    "death-stranding-2": { 
+        name: "Death Stranding 2: On The Beach", platform: "PC / Console", category: "ACTION", score: "9.1", developer: "Kojima Productions", year: "2026", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2704280/header.jpg", 
+        description: "สานต่อภารกิจของ Sam Bridges สู่การเดินทางข้ามทวีปที่เต็มไปด้วยกลไกและปมปริศนาสุดล้ำเหนือจินตนาการ", 
+        features: ["เนื้อเรื่องล้ำลึกซับซ้อนตามสไตล์โคจิม่า", "การเดินทางสำรวจและสร้างเส้นทางข้ามทวีป", "ระบบปฏิสัมพันธ์กับผู้เล่นคนอื่น", "ฉากคัตซีนเสมือนภาพยนตร์", "กราฟิกสภาพแวดล้อมที่สมจริงยิ่งขึ้น"], 
+        min: ["Intel Core i5-8400", "16 GB", "GTX 1060", "80 GB", "Windows 10"], rec: ["Intel Core i7-10700K", "16 GB", "RTX 3060", "80 GB", "Windows 11"] 
+    },
+    "forza-horizon-6": { 
+        name: "Forza Horizon 6", platform: "PC / Console", category: "RACING", score: "9.0", developer: "Playground Games", year: "2026", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2880000/header.jpg", 
+        description: "ซิ่งสุดมันส์ในเทศกาลแข่งขันรถ Open World ภาคใหม่ล่าสุด ที่อัปเกรดสภาพแวดล้อมใหม่ทั้งหมด", 
+        features: ["รถแข่งลิขสิทธิ์ระดับไฮเอนด์นับร้อยคัน", "ขับขี่อิสระแบบ Open World ขนาดใหญ่", "ระบบสภาพอากาศแบบ Live Track", "อีเวนต์แข่งขันหลากหลายโหมด", "แต่งรถและจูนเครื่องได้ละเอียดยิบ"], 
+        min: ["Intel Core i5-8400", "16 GB", "GTX 1070", "150 GB", "Windows 10"], rec: ["Intel Core i7-12700K", "32 GB", "RTX 4070", "150 GB", "Windows 11"] 
+    },
+    "pragmata": { 
+        name: "Pragmata", platform: "PC / Console", category: "ACTION", score: "8.8", developer: "Capcom", year: "2026", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1400000/header.jpg", 
+        description: "ผจญภัยแอ็กชันไซไฟบนสภาพแวดล้อมของดวงจันทร์ ในโลกดิสโทเปียสุดล้ำที่ล่มสลาย", 
+        features: ["เนื้อเรื่องไซไฟผจญภัยลึกลับ", "อาวุธไฮเทคและชุดเกราะอวกาศ", "การเดินทางร่วมกับเด็กหญิงปริศนา", "สภาพแวดล้อมไร้แรงโน้มถ่วง", "ฉากแอ็กชันปะทะหุ่นยนต์ยักษ์"], 
+        min: ["Intel Core i5-9600K", "16 GB", "GTX 1660 Ti", "100 GB", "Windows 10"], rec: ["Intel Core i7-11700K", "32 GB", "RTX 3070", "100 GB", "Windows 11"] 
+    },
+    "ac-black-flag-resynced": { 
+        name: "Assassin's Creed Black Flag Resynced", platform: "PC / Console", category: "ADVENTURE", score: "8.4", developer: "Ubisoft", year: "2026", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2881000/header.jpg", 
+        description: "รีเมคตำนานภาคโจรสลัดที่ยกระดับกราฟิก ระบบเดินเรือ และกลไกการลอบสังหารให้ล้ำสมัยเทียบเท่าเกมยุคปัจจุบัน", 
+        features: ["กราฟิกรีเมคใหม่ยกแผง", "สงครามทางเรือและการปล้นสะดมสุดมันส์", "ท่วงท่าลอบสังหารที่คล่องตัวขึ้น", "ออกสำรวจเกาะและมหาสมุทรแคริบเบียน", "อัปเกรดเรือแจ็คดอว์ของตนเอง"], 
+        min: ["Intel Core i5-9600K", "16 GB", "GTX 1060", "120 GB", "Windows 10"], rec: ["Intel Core i7-12700K", "32 GB", "RTX 3070", "120 GB", "Windows 11"] 
     }
 };
