@@ -1,32 +1,37 @@
-// ============================================================
-// chatbot.js — วิดเจ็ตแชทบอทแนะนำเกม (GAMEZONE)
-// เชื่อมกับ Cloudflare Worker + Gemini API
-// ============================================================
-//
-// วิธีติดตั้ง:
-// 1. Deploy ไฟล์ worker/chat-worker.js ขึ้น Cloudflare Workers (ฟรี)
-//    แล้วเอา URL ที่ได้มาใส่ตรง CHAT_API_URL ด้านล่าง
-// ============================================================
+// เปลี่ยน URL ไปเรียก API ของ Vercel ในโปรเจกต์เดียวกัน
+const CHAT_API_URL = "/api/chat";
 
-const CHAT_API_URL = "https://gameteerapong.suwarojggez.workers.dev";
-
-const SERVER_CONTEXT = `
-คุณคือ "GameZone Bot" ผู้ช่วยแนะนำเกมประจำเว็บไซต์ GAMEZONE
-เว็บไซต์นี้รวมข้อมูลเกมมือถือและเกม PC พร้อมระบบจัดอันดับเกมยอดนิยม
-
+// ฟังก์ชันสร้าง Context แบบแปรผันตามหน้าเว็บ
+function getDynamicContext() {
+    let baseContext = `คุณคือ "GameZone Bot" ผู้ช่วยแนะนำเกมประจำเว็บไซต์ GAMEZONE
 หน้าที่ของคุณ:
-1. แนะนำเกมมือถือหรือเกม PC ตามความสนใจของผู้ใช้ (แนวเกม เช่น RPG, FPS, แนวผจญภัย, แนวสร้างเมือง ฯลฯ)
-2. ให้ข้อมูลทั่วไปเกี่ยวกับเกมต่างๆ ที่ผู้ใช้ถามถึง (เนื้อเรื่องคร่าวๆ, แนวเกม, จุดเด่น)
-3. ช่วยเปรียบเทียบเกมให้ผู้ใช้ตัดสินใจเลือกเล่น
-4. ตอบคำถามเกี่ยวกับสเปกคอมที่แนะนำสำหรับเล่นเกม PC ทั่วไป (ให้คำแนะนำกว้างๆ ได้)
-5. ถ้าผู้ใช้ถามเรื่องอื่นที่ไม่เกี่ยวกับเกม ให้ตอบอย่างสุภาพว่าคุณเชี่ยวชาญเรื่องเกมเป็นหลัก
+1. แนะนำ เปรียบเทียบ และให้ข้อมูลเกี่ยวกับเกม PC เท่านั้น
+2. ให้คำปรึกษาเรื่องสเปกคอมพิวเตอร์ จัดสเปก หรือวิเคราะห์ฮาร์ดแวร์อย่างผู้เชี่ยวชาญ
+3. แนะนำแนวทางการเล่น (เทคนิค, ไกด์, วิธีผ่านด่าน) ของเกมต่างๆ
+กฎ: ตอบเป็นภาษาไทย เป็นกันเอง กระชับ และ ห้ามใช้สัญลักษณ์ Markdown (เช่น ** หรือ #) เพราะข้อความจะพัง`;
 
-กฎการตอบ:
-- ตอบเป็นภาษาไทย เป็นกันเอง กระชับ ตรงประเด็น
-- ถ้าแนะนำเกมหลายเกม ให้จัดเป็นรายการสั้นๆ อ่านง่าย
-- ห้ามใช้สัญลักษณ์ Markdown เช่น **ตัวหนา**, ### หัวข้อ เพราะข้อความจะแสดงผลเป็นตัวอักษรธรรมดา
-- หากไม่แน่ใจข้อมูลเกมใดเกมหนึ่งจริงๆ ให้บอกตามตรงว่าไม่แน่ใจ ไม่เดาข้อมูลมั่ว
-`.trim();
+    if (window.location.pathname.includes('game-detail.html')) {
+        const params = new URLSearchParams(window.location.search);
+        const gameKey = params.get('game');
+        
+        if (gameKey && typeof gamesDatabase !== 'undefined' && gamesDatabase[gameKey]) {
+            const game = gamesDatabase[gameKey];
+            baseContext += `\n\n[ข้อมูลสำคัญมาก]: ขณะนี้ผู้ใช้กำลังดูข้อมูลเกมชื่อ "${game.name}" อยู่บนหน้าจอ
+ข้อมูลของเกมนี้:
+- หมวดหมู่: ${game.category}
+- แพลตฟอร์ม: ${game.platform}
+- ผู้พัฒนา: ${game.developer}
+- คะแนน: ${game.score}/10
+- เนื้อเรื่อง/รายละเอียด: ${game.description}
+- จุดเด่น: ${game.features.join(", ")}
+- สเปกขั้นต่ำ: CPU ${game.min[0]}, RAM ${game.min[1]}, GPU ${game.min[2]}, ใช้พื้นที่ ${game.min[3]}
+- สเปกแนะนำ: CPU ${game.rec[0]}, RAM ${game.rec[1]}, GPU ${game.rec[2]}, ใช้พื้นที่ ${game.rec[3]}
+
+หากผู้ใช้ถามลอยๆ เช่น "เกมนี้สเปกเท่าไหร่", "ผ่านด่านยังไง", "สนุกไหม" ให้เข้าใจทันทีว่าหมายถึงเกม "${game.name}" และใช้ข้อมูลด้านบนตอบกลับได้เลย`;
+        }
+    }
+    return baseContext;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     injectWidget();
@@ -61,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         addBubble(text, "user");
 
-        // เก็บ history ที่ "มีอยู่ก่อนหน้า" เท่านั้น ป้องกันส่งข้อความซ้ำซ้อนไปให้ AI
         const historyToSend = history.slice(-10);
         input.value = "";
 
@@ -74,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     message: text,
                     history: historyToSend,
-                    serverContext: SERVER_CONTEXT
+                    serverContext: getDynamicContext()
                 })
             });
 
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (err) {
             typingEl.remove();
-            addBubble("⚠️ เชื่อมต่อระบบแชทบอทไม่สำเร็จ ลองใหม่อีกครั้งนะ", "bot");
+            addBubble("ระบบเชื่อมต่อแชทบอทไม่สำเร็จ ลองใหม่อีกครั้งนะครับ", "bot");
             console.error("Chatbot error:", err);
         }
     }
@@ -107,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function injectWidget() {
         const toggle = document.createElement("button");
         toggle.id = "gz-chat-toggle";
-        toggle.innerHTML = "🎮";
+        // SVG ไอคอนจอยสติ๊กแทนอิโมจิ
+        toggle.innerHTML = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4"/><path d="M8 10v4"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/></svg>`;
         toggle.setAttribute("aria-label", "เปิดแชทบอทแนะนำเกม");
 
         const win = document.createElement("div");
@@ -115,17 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
         win.innerHTML = `
             <div class="gz-chat-header">
                 <div>
-                    <h4>🎮 GameZone Bot</h4>
-                    <span>ผู้ช่วยแนะนำเกม</span>
+                    <h4 style="display: flex; align-items: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4"/><path d="M8 10v4"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/></svg>
+                        GameZone Bot
+                    </h4>
+                    <span>ผู้ช่วยแนะนำเกมและสเปก PC</span>
                 </div>
-                <button id="gz-chat-close">✕</button>
+                <button id="gz-chat-close" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
             </div>
             <div id="gz-chat-messages">
-                <div class="gz-msg bot">สวัสดีครับ! อยากได้เกมแนวไหนดี บอกมาได้เลย จะแนะนำให้ 🎮</div>
+                <div class="gz-msg bot">สวัสดีครับ! อยากได้เกม PC แนวไหน ให้ช่วยจัดสเปกคอม หรือหาเทคนิคการเล่นเกมอะไร บอกมาได้เลยครับ</div>
             </div>
             <div id="gz-chat-input-row">
                 <textarea id="gz-chat-input" rows="1" placeholder="พิมพ์คำถาม..."></textarea>
-                <button id="gz-chat-send">➤</button>
+                <button id="gz-chat-send" style="display: flex; align-items: center; justify-content: center; width: 42px; padding: 0;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
             </div>
         `;
 
