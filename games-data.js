@@ -644,7 +644,7 @@ const gamesDatabase = {
     },
     "dragon-age-inquisition": { 
         name: "Dragon Age: Inquisition", platform: "PC / Console", category: "RPG", score: "8.9", developer: "BioWare", year: "2014", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222650/header.jpg", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222690/header.jpg", 
         description: "สวมบทผู้นำกลุ่ม Inquisition ปิดรอยแยกปีศาจบนท้องฟ้า", 
         features: ["ควบคุมปาร์ตี้ 4 คน", "ทางเลือกทางการเมือง", "ล่ามังกรสุดท้าทาย", "เนื้อเรื่องแฟนตาซีลุ่มลึก", "สร้างปฏิสัมพันธ์กับเพื่อนร่วมทีม"], 
         min: ["Intel Core i5", "4 GB", "Radeon HD 4870", "26 GB", "Windows 10"], rec: ["Intel Core i5", "8 GB", "GTX 660", "26 GB", "Windows 10"] 
