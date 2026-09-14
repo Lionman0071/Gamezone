@@ -67,7 +67,7 @@ const gamesDatabase = {
     },
     "helldivers-2": { 
         name: "HELLDIVERS 2", platform: "PC / Console", category: "ACTION", score: "9.3", developer: "Arrowhead Game Studios", year: "2024", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2580160/header.jpg", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg", 
         description: "เกมยิง Co-op ที่ให้คุณร่วมมือกับเพื่อนกอบกู้จักรวาลจากเอเลี่ยน", 
         features: ["Co-op 4 คน", "อาวุธทำลายล้าง", "เรียกสเตราทาเจ็ม", "ระบบ Friendly Fire", "สงครามระดับกาแล็กซี"], 
         min: ["Intel Core i7", "8 GB", "GTX 1050 Ti", "100 GB", "Windows 10"], rec: ["Intel Core i7", "16 GB", "RTX 2060", "100 GB", "Windows 11"] 
