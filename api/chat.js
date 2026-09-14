@@ -25,7 +25,7 @@ export default async function handler(req, res) {
             body: JSON.stringify({
                 system_instruction: { parts: [{ text: serverContext }] },
                 contents: contents,
-                generationConfig: { maxOutputTokens: 1000 }
+                generationConfig: { maxOutputTokens: 2000 }
             })
         });
 
