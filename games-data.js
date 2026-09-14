@@ -483,7 +483,7 @@ const gamesDatabase = {
     },
     "tomb-raider-shadow": { 
         name: "Shadow of the Tomb Raider", platform: "PC / Console", category: "ADVENTURE", score: "8.8", developer: "Eidos-Montréal", year: "2018", 
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2382140/header.jpg", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/750920/header.jpg", 
         description: "บทสรุปจุดกำเนิดของลาร่า ครอฟต์ สู่การเป็นนักล่าสุสานในป่าดงดิบมรณะ", 
         features: ["สำรวจสุสานซับซ้อน", "พรางตัวพอกโคลนลอบสังหาร", "สภาพแวดล้อมป่าดิบชื้น", "แก้ปริศนาสุดอันตราย", "ภาพสวยรองรับ Ray Tracing"], 
         min: ["Intel Core i3-3220", "8 GB", "GTX 660", "40 GB", "Windows 10"], rec: ["Intel Core i7-4770K", "16 GB", "GTX 1060", "40 GB", "Windows 10"] 
