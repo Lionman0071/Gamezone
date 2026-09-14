@@ -56,6 +56,9 @@
         </svg> Simulation
     </button>
 </div>
+
+<div class="ranking-list" id="rankingList">
+</div>
 </section>
 
 <footer>
@@ -70,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("rankingList");
     const tabs = document.querySelectorAll(".ranking-tab");
 
-    // 1. ดึงข้อมูลเกมทั้งหมด และเรียงคะแนนจากมากไปน้อยเตรียมไว้ก่อน
     const allGamesSorted = Object.entries(gamesDatabase)
         .map(([id, game]) => ({ id, ...game }))
         .sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
@@ -78,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderList(filter) {
         let rank = 1;
         
-        // 2. กรองตามหมวดหมู่ (category) แล้วค่อยตัดมา 10 อันดับแรก
         const filteredGames = allGamesSorted
             .filter(item => filter === 'all' || item.category.toLowerCase() === filter)
             .slice(0, 10);
@@ -111,13 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.addEventListener("click", function() {
             tabs.forEach(t => t.classList.remove("active"));
             this.classList.add("active");
-            // 3. เปลี่ยนจาก dataset.platform เป็น dataset.category ให้ตรงกับปุ่ม HTML
             renderList(this.dataset.category);
         });
     });
 });
 </script>
-<script src="chatbot-widget.js"></script>
 <script src="chatbot.js"></script>
 </body>
 </html>
