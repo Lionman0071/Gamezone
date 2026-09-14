@@ -70,31 +70,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("rankingList");
     const tabs = document.querySelectorAll(".ranking-tab");
 
-    const top10Games = Object.entries(gamesDatabase)
+    // 1. ดึงข้อมูลเกมทั้งหมด และเรียงคะแนนจากมากไปน้อยเตรียมไว้ก่อน
+    const allGamesSorted = Object.entries(gamesDatabase)
         .map(([id, game]) => ({ id, ...game }))
-        .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
-        .slice(0, 10);
+        .sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
 
     function renderList(filter) {
         let rank = 1;
-        list.innerHTML = top10Games
-            .filter(item => filter === 'all' || item.platform.toLowerCase() === filter)
-            .map(item => `
-                <a class="ranking-item" data-platform="${item.platform.toLowerCase()}" href="game-detail.html?game=${item.id}">
+        
+        // 2. กรองตามหมวดหมู่ (category) แล้วค่อยตัดมา 10 อันดับแรก
+        const filteredGames = allGamesSorted
+            .filter(item => filter === 'all' || item.category.toLowerCase() === filter)
+            .slice(0, 10);
+
+        if (filteredGames.length > 0) {
+            list.innerHTML = filteredGames.map(item => `
+                <a class="ranking-item" href="game-detail.html?game=${item.id}">
                     <div class="rank-number">${rank++}</div>
                     <div class="rank-icon">
                         <img src="${item.image}" alt="${item.name}">
                     </div>
                     <div class="rank-info">
-                        <span class="tag">${item.platform.toUpperCase()}</span>
+                        <span class="tag">${item.category.toUpperCase()}</span>
                         <h3>${item.name}</h3>
-                        <p>${item.category} / ${item.developer}</p>
+                        <p>${item.platform} / ${item.developer}</p>
                     </div>
                     <div class="score">
                         <strong>${item.score}</strong><span>/10</span>
                     </div>
                 </a>
             `).join('');
+        } else {
+            list.innerHTML = `<p class="no-result" style="display:block; text-align:center; width:100%; color:var(--text-muted); padding:40px;">ไม่พบข้อมูลจัดอันดับในหมวดหมู่นี้</p>`;
+        }
     }
 
     renderList('all');
@@ -103,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.addEventListener("click", function() {
             tabs.forEach(t => t.classList.remove("active"));
             this.classList.add("active");
-            renderList(this.dataset.platform);
+            // 3. เปลี่ยนจาก dataset.platform เป็น dataset.category ให้ตรงกับปุ่ม HTML
+            renderList(this.dataset.category);
         });
     });
 });
