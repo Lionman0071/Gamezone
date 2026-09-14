@@ -58,7 +58,6 @@ document.addEventListener("gamesDataLoaded", () => {
     const list = document.getElementById("rankingList");
     const tabs = document.querySelectorAll(".ranking-tab");
 
-    // เรียงคะแนนจากมากไปน้อย แล้วตัดมาแค่ 10 อันดับแรก
     const top10Games = Object.entries(gamesDatabase)
         .map(([id, game]) => ({ id, ...game }))
         .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))

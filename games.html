@@ -62,14 +62,11 @@ document.addEventListener("gamesDataLoaded", () => {
     const gameFilters = document.querySelectorAll(".game-filter");
     let currentFilter = "all";
     
-    // ดึงข้อมูลเกมทั้งหมดมาแสดง (ตัด Mobile ทิ้งไปได้เลย)
     const gamesArray = Object.entries(gamesDatabase).map(([id, game]) => ({ id, ...game }));
 
-    // ฟังก์ชันสร้างการ์ดใหม่ (ล้างไพ่แล้วแจกใหม่)
     function renderGames() {
         const search = gameSearch.value.toLowerCase();
         
-        // กรองข้อมูลตามที่ค้นหาและหมวดหมู่
         const filteredGames = gamesArray.filter(game => {
             const matchSearch = game.name.toLowerCase().includes(search);
             const matchCategory = currentFilter === "all" || game.category.toLowerCase() === currentFilter;
@@ -78,7 +75,7 @@ document.addEventListener("gamesDataLoaded", () => {
 
         if (filteredGames.length > 0) {
             grid.innerHTML = filteredGames.map((game, index) => {
-                const delay = index * 0.05; // ดีเลย์ 0.05 วินาที
+                const delay = index * 0.05;
                 return `
                 <a class="game-card" style="animation-delay: ${delay}s;" href="game-detail.html?game=${game.id}">
                     <div class="game-cover">
@@ -99,13 +96,9 @@ document.addEventListener("gamesDataLoaded", () => {
         }
     }
 
-    // แจกไพ่ครั้งแรกตอนโหลดหน้าเว็บ
     renderGames();
 
-    // แจกไพ่ใหม่เมื่อพิมพ์ค้นหา
     gameSearch.addEventListener("input", renderGames);
-
-    // แจกไพ่ใหม่เมื่อกดเปลี่ยนหมวดหมู่
     gameFilters.forEach(button => {
         button.addEventListener("click", function() {
             gameFilters.forEach(btn => btn.classList.remove("active"));

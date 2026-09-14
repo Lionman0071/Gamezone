@@ -131,14 +131,14 @@ document.addEventListener("gamesDataLoaded", () => {
     const grid = document.getElementById('popular-games-grid');
     if (!grid) return;
     
-    // เปลี่ยนจาก genshin-impact เป็นเกม PC เพื่อความต่อเนื่อง (ผมเปลี่ยนเป็น cyberpunk-2077 กับ elden-ring ให้)
-    const popularKeys = ['assetto-corsa-evo', 'beamng-drive', 'cyberpunk-2077', 'elden-ring'];
+    // ดึง 4 เกมแรกที่ได้จาก IGDB API มาแสดงผล
+    const gamesArray = Object.entries(gamesDatabase).map(([id, game]) => ({ id, ...game }));
+    const popularGames = gamesArray.slice(0, 4); 
     
-    grid.innerHTML = popularKeys.map((id, index) => {
-        const game = gamesDatabase[id];
+    grid.innerHTML = popularGames.map((game, index) => {
         const delay = index * 0.1;
         return `
-        <a class="game-card" style="animation-delay: ${delay}s;" data-category="${game.category.toLowerCase()}" data-name="${game.name}" href="game-detail.html?game=${id}">
+        <a class="game-card" style="animation-delay: ${delay}s;" data-category="${game.category.toLowerCase()}" data-name="${game.name}" href="game-detail.html?game=${game.id}">
             <div class="game-cover">
                 <img src="${game.image}" alt="${game.name}">
             </div>
