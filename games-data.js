@@ -303,5 +303,226 @@ const gamesDatabase = {
         description: "รีเมคเกมสเกตบอร์ดระดับตำนาน กลับมาพร้อมกราฟิกคมชัด", 
         features: ["คอมโบท่าสเกต", "ดนตรีพังก์ร็อกดั้งเดิม", "เล่น Split Screen", "สร้างลานสเกตเอง", "นักสเกตระดับโปร"], 
         min: ["Intel Core i3", "8 GB", "GTX 1050 Ti", "24 GB", "Windows 10"], rec: ["Intel Core i5", "12 GB", "GTX 1060", "24 GB", "Windows 11"] 
+    },
+    // ================= หมวด RACING (เพิ่มเติม) =================
+    "need-for-speed-heat": { 
+        name: "Need for Speed Heat", platform: "PC / Console", category: "RACING", score: "8.0", developer: "Ghost Games", year: "2019", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222680/header.jpg", 
+        description: "ซิ่งกลางวันเพื่อหาเงิน และแข่งใต้ดินตอนกลางคืนเพื่อสร้างชื่อเสียงหนีการไล่ล่าของตำรวจ", 
+        features: ["แข่งรถสองช่วงเวลา", "แต่งรถได้อิสระมาก", "ตำรวจไล่ล่าดุเดือด", "กราฟิกสีสันสไตล์นีออน", "เล่นออนไลน์กับเพื่อน"], 
+        min: ["Intel Core i5-3570", "8 GB", "GTX 760", "50 GB", "Windows 10"], rec: ["Intel Core i7-4790", "16 GB", "GTX 1060", "50 GB", "Windows 10"] 
+    },
+    "carx-drift-racing": { 
+        name: "CarX Drift Racing Online", platform: "PC / Console", category: "RACING", score: "8.8", developer: "CarX Technologies", year: "2017", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/320140/header.jpg", 
+        description: "สุดยอดเกมจำลองการดริฟต์ที่สมจริงและได้รับความนิยมสูงสุดในหมู่ผู้เล่นสายรถซิ่ง", 
+        features: ["ฟิสิกส์การดริฟต์สมจริง", "ปรับจูนเครื่องยนต์ละเอียด", "ระบบสร้างลายรถ", "ห้องเล่นออนไลน์ลื่นไหล", "รองรับพวงมาลัยครบชุด"], 
+        min: ["Intel Core i5-4590", "4 GB", "GTX 950", "6 GB", "Windows 10"], rec: ["Intel Core i5-8300H", "8 GB", "GTX 1050", "6 GB", "Windows 10"] 
+    },
+    "snowrunner": { 
+        name: "SnowRunner", platform: "PC / Console", category: "RACING", score: "8.9", developer: "Saber Interactive", year: "2021", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1465360/header.jpg", 
+        description: "ขับรถลุยโคลนและหิมะในสภาพแวดล้อมสุดหฤโหดเพื่อส่งของและกู้ภัย", 
+        features: ["ระบบฟิสิกส์โคลนและน้ำสมจริง", "ยานพาหนะออฟโรด 40+ คัน", "แผนที่ขนาดใหญ่", "ภารกิจท้าทายความอดทน", "Co-op 4 คน"], 
+        min: ["Intel Core i3-4130", "8 GB", "GTX 660", "20 GB", "Windows 10"], rec: ["Intel Core i7-8700", "16 GB", "GTX 970", "20 GB", "Windows 10"] 
+    },
+    "wrc-generations": { 
+        name: "WRC Generations", platform: "PC / Console", category: "RACING", score: "8.1", developer: "KT Racing", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1953520/header.jpg", 
+        description: "เกมแข่งรถแรลลี่ลิขสิทธิ์แท้ที่รวบรวมรถและสนามแข่งมากที่สุดในซีรีส์", 
+        features: ["ระบบเครื่องยนต์ไฮบริด", "สนามแข่ง 165 สเตจ", "ระบบลีกออนไลน์", "สภาพอากาศไดนามิก", "สร้างทีมแข่งของตัวเอง"], 
+        min: ["Intel Core i5-2300", "8 GB", "GTX 650 Ti", "47 GB", "Windows 10"], rec: ["Intel Core i7-4790K", "16 GB", "GTX 1070", "47 GB", "Windows 10"] 
+    },
+    "f1-manager-2023": { 
+        name: "F1 Manager 2023", platform: "PC / Console", category: "RACING", score: "8.3", developer: "Frontier Developments", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2287220/header.jpg", 
+        description: "รับบทผู้จัดการทีม Formula 1 ควบคุมทุกอย่างตั้งแต่รถยันกลยุทธ์พิตสต็อป", 
+        features: ["บริหารจัดการทีม F1", "ภาพกราฟิกการแข่งสมจริง", "กำหนดกลยุทธ์ยาง", "พัฒนารถยนต์", "รับมืออุบัติเหตุในสนาม"], 
+        min: ["Intel Core i5-4590", "8 GB", "GTX 960", "30 GB", "Windows 10"], rec: ["Intel Core i7-7700", "16 GB", "GTX 1080", "30 GB", "Windows 10"] 
+    },
+
+    // ================= หมวด ACTION (เพิ่มเติม) =================
+    "god-of-war": { 
+        name: "God of War", platform: "PC / Console", category: "ACTION", score: "9.7", developer: "Santa Monica Studio", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg", 
+        description: "การผจญภัยครั้งใหม่ของเครโทสและเอเทรอัสในดินแดนเทพเจ้านอร์สสุดโหด", 
+        features: ["ระบบต่อสู้ด้วยขวานสุดมันส์", "เนื้อเรื่องซาบซึ้งกินใจ", "มุมกล้องแบบ Long Take เล่าเรื่องต่อเนื่อง", "อัปเกรดสกิลและชุด", "บอสไฟต์อลังการ"], 
+        min: ["Intel Core i5-2500K", "8 GB", "GTX 960", "70 GB", "Windows 10"], rec: ["Intel Core i5-6600K", "16 GB", "GTX 1060", "70 GB", "Windows 10"] 
+    },
+    "devil-may-cry-5": { 
+        name: "Devil May Cry 5", platform: "PC / Console", category: "ACTION", score: "9.4", developer: "Capcom", year: "2019", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/601150/header.jpg", 
+        description: "กลับมาทวงบัลลังก์เกมแอ็กชันสับแหลก ทำคอมโบสุดเท่เพื่อคะแนน SSS", 
+        features: ["ตัวละครหลัก 3 ตัวละคร", "คอมโบสุดอลังการ", "กราฟิกสมจริงด้วย RE Engine", "เพลงประกอบปลุกใจ", "ความยากหลายระดับ"], 
+        min: ["Intel Core i5-4460", "8 GB", "GTX 760", "35 GB", "Windows 10"], rec: ["Intel Core i7-4770K", "8 GB", "GTX 1060", "35 GB", "Windows 10"] 
+    },
+    "doom-eternal": { 
+        name: "DOOM Eternal", platform: "PC / Console", category: "ACTION", score: "9.3", developer: "id Software", year: "2020", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/header.jpg", 
+        description: "สวมบท Doom Slayer กระโดดสับและยิงแหลกฝ่าดงปีศาจจากนรก", 
+        features: ["เกมเพลย์ยิงปืนรวดเร็ว", "ระบบเติมเลือดจากการ Glory Kill", "ปืนและอุปกรณ์ทำลายล้าง", "ดนตรีเมทัลโยกหัวดุดัน", "แพลตฟอร์มมิ่งปีนป่าย"], 
+        min: ["Intel Core i5 @ 3.3 GHz", "8 GB", "GTX 1050 Ti", "80 GB", "Windows 10"], rec: ["Intel Core i7-6700K", "8 GB", "GTX 1080", "80 GB", "Windows 10"] 
+    },
+    "sifu": { 
+        name: "Sifu", platform: "PC / Console", category: "ACTION", score: "8.9", developer: "Sloclap", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2138710/header.jpg", 
+        description: "เกมกังฟูที่ตายแล้วจะแก่ขึ้น ต้องล้างแค้นด้วยศิลปะการต่อสู้มือเปล่า", 
+        features: ["ระบบต่อสู้ระยะประชิดล้ำลึก", "แก่ขึ้นทุกครั้งที่ตาย", "ฉากแอ็กชันคล้ายหนังภาพยนตร์", "เรียนรู้คอมโบกังฟู", "ท้าทายทักษะผู้เล่น"], 
+        min: ["Intel Core i5-3470", "8 GB", "GTX 660", "22 GB", "Windows 10"], rec: ["Intel Core i7-6700K", "10 GB", "GTX 970", "22 GB", "Windows 10"] 
+    },
+    "armored-core-6": { 
+        name: "ARMORED CORE VI", platform: "PC / Console", category: "ACTION", score: "9.1", developer: "FromSoftware", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888160/header.jpg", 
+        description: "สร้างหุ่นรบและปรับแต่งชิ้นส่วนเพื่อออกไปทำภารกิจสุดมันส์สไตล์หุ่นยนต์", 
+        features: ["ปรับแต่งหุ่นรบได้อิสระ", "การเคลื่อนที่ 3 มิติ", "บอสไฟต์อลังการ", "ภารกิจหลากหลายรูปแบบ", "กราฟิกเอฟเฟกต์ระเบิดสมจริง"], 
+        min: ["Intel Core i7-4790K", "12 GB", "GTX 1650", "60 GB", "Windows 10"], rec: ["Intel Core i7-7700", "12 GB", "GTX 1060", "60 GB", "Windows 11"] 
+    },
+
+    // ================= หมวด RPG (เพิ่มเติม) =================
+    "horizon-forbidden-west": { 
+        name: "Horizon Forbidden West", platform: "PC / Console", category: "RPG", score: "9.2", developer: "Guerrilla Games", year: "2024", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2420110/header.jpg", 
+        description: "ผจญภัยไปในดินแดนตะวันตกที่เต็มไปด้วยเครื่องจักรกลไดโนเสาร์", 
+        features: ["กราฟิกโคตรสวยงาม", "ต่อสู้กับหุ่นยนต์ยักษ์", "สำรวจโลกใต้น้ำ", "อาวุธธนูหลากชนิด", "เนื้อเรื่องไซไฟผจญภัย"], 
+        min: ["Intel Core i3-8100", "16 GB", "GTX 1650", "150 GB", "Windows 10"], rec: ["Intel Core i5-8600", "16 GB", "RTX 3060", "150 GB", "Windows 10"] 
+    },
+    "mass-effect-legendary": { 
+        name: "Mass Effect Legendary Edition", platform: "PC / Console", category: "RPG", score: "9.5", developer: "BioWare", year: "2021", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328670/header.jpg", 
+        description: "มหากาพย์ไซไฟ RPG ตะลุยอวกาศที่รวมเอา 3 ภาคมารีมาสเตอร์ใหม่", 
+        features: ["รวมเกม 3 ภาคจบ", "ทางเลือกส่งผลต่อทั้งไตรภาค", "เนื้อเรื่องอวกาศสุดเข้มข้น", "สร้างตัวละครผู้บัญชาการ Shepard", "กราฟิกรีมาสเตอร์"], 
+        min: ["Intel Core i5 3570", "8 GB", "GTX 760", "120 GB", "Windows 10"], rec: ["Intel Core i7-7700", "16 GB", "GTX 1070", "120 GB", "Windows 10"] 
+    },
+    "diablo-4": { 
+        name: "Diablo IV", platform: "PC / Console", category: "RPG", score: "8.5", developer: "Blizzard Entertainment", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2344520/header.jpg", 
+        description: "เกม Action RPG ระดับตำนานตะลุยดันเจี้ยน ฟาร์มของสู้ปีศาจ", 
+        features: ["โลก Open World มืดมน", "บิลด์ตัวละครหลากหลาย", "ระบบฤดูกาลอัปเดตต่อเนื่อง", "Co-op ล่าบอสโลก", "คลาสตัวละครเอกลักษณ์ชัดเจน"], 
+        min: ["Intel Core i5-2500K", "8 GB", "GTX 660", "90 GB", "Windows 10"], rec: ["Intel Core i5-4670K", "16 GB", "GTX 970", "90 GB", "Windows 10"] 
+    },
+    "persona-3-reload": { 
+        name: "Persona 3 Reload", platform: "PC / Console", category: "RPG", score: "9.3", developer: "ATLUS", year: "2024", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2161700/header.jpg", 
+        description: "ภาครีเมคของเกม RPG สุดคลาสสิก เรื่องราวของเด็กนักเรียนกับชั่วโมงที่ 25", 
+        features: ["กราฟิกรีเมคใหม่หมด", "UI สุดเท่และมีสไตล์", "ระบบความสัมพันธ์ตัวละครลึกซึ้ง", "ดันเจี้ยนทาร์ทารัส", "เพลงประกอบยอดเยี่ยม"], 
+        min: ["Intel Core i5-2300", "8 GB", "GTX 650 Ti", "30 GB", "Windows 10"], rec: ["Intel Core i7-4790", "8 GB", "GTX 1650", "30 GB", "Windows 10"] 
+    },
+    "ff7-remake": { 
+        name: "Final Fantasy VII Remake Intergrade", platform: "PC / Console", category: "RPG", score: "9.6", developer: "Square Enix", year: "2021", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1462040/header.jpg", 
+        description: "รีเมคตำนานเกม RPG ที่เปลี่ยนระบบต่อสู้ให้เป็นแอ็กชันผสมแทคติค", 
+        features: ["เมืองมิดการ์สุดอลังการ", "ระบบต่อสู้แอ็กชัน + ATB", "เนื้อเรื่องขยายความใหม่", "มาพร้อมเนื้อเรื่องเสริมของ Yuffie", "กราฟิกระดับ Next-gen"], 
+        min: ["Intel Core i5 3330", "8 GB", "GTX 780", "100 GB", "Windows 10"], rec: ["Intel Core i7-3770", "12 GB", "GTX 1080", "100 GB", "Windows 10"] 
+    },
+
+    // ================= หมวด SIMULATION (เพิ่มเติม) =================
+    "farming-simulator-22": { 
+        name: "Farming Simulator 22", platform: "PC / Console", category: "SIMULATION", score: "8.8", developer: "GIANTS Software", year: "2021", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1248130/header.jpg", 
+        description: "จำลองการทำเกษตรกรรมที่สมจริงที่สุด ตั้งแต่ปลูกพืช เลี้ยงสัตว์ ไปจนถึงสร้างโรงงาน", 
+        features: ["เครื่องจักรการเกษตรของจริง", "ระบบฤดูกาลสี่ฤดู", "ระบบเครือข่ายการผลิต", "มัลติเพลเยอร์ช่วยกันทำฟาร์ม", "รองรับ Mod เต็มรูปแบบ"], 
+        min: ["Intel Core i5-3330", "8 GB", "GTX 660", "35 GB", "Windows 10"], rec: ["Intel Core i5-5675C", "8 GB", "GTX 1060", "35 GB", "Windows 10"] 
+    },
+    "frostpunk-2": { 
+        name: "Frostpunk 2", platform: "PC / Console", category: "SIMULATION", score: "8.7", developer: "11 bit studios", year: "2024", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1601580/header.jpg", 
+        description: "สร้างและบริหารเมืองในยุคน้ำแข็ง พร้อมการตัดสินใจด้านศีลธรรมสุดกดดัน", 
+        features: ["สร้างมหานครแห่งการเอาชีวิตรอด", "ระบบการเมืองและสภาเมือง", "สภาพอากาศสุดขั้ว", "ทางเลือกที่ส่งผลกระทบต่อประชาชน", "กราฟิกขยายสเกลเมืองใหญ่ขึ้น"], 
+        min: ["Intel Core i5", "8 GB", "GTX 1050 Ti", "30 GB", "Windows 10"], rec: ["Intel Core i7", "16 GB", "RTX 2060", "30 GB", "Windows 11"] 
+    },
+    "jurassic-world-evo-2": { 
+        name: "Jurassic World Evolution 2", platform: "PC / Console", category: "SIMULATION", score: "8.6", developer: "Frontier Developments", year: "2021", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1244460/header.jpg", 
+        description: "สร้างสวนสนุกไดโนเสาร์และดูแลจัดการสัตว์ดึกดำบรรพ์ให้อยู่ในความควบคุม", 
+        features: ["ไดโนเสาร์มากกว่า 75 ชนิด", "สร้างและออกแบบกรงสัตว์", "รับมือภัยพิบัติพายุ", "โหมดทฤษฎีความวุ่นวาย (Chaos Theory)", "ระบบพันธุกรรมสีสัตว์"], 
+        min: ["Intel Core i5-4590", "8 GB", "GTX 1050 Ti", "14 GB", "Windows 10"], rec: ["Intel Core i7-5775C", "16 GB", "GTX 1070", "14 GB", "Windows 10"] 
+    },
+    "two-point-campus": { 
+        name: "Two Point Campus", platform: "PC / Console", category: "SIMULATION", score: "8.8", developer: "Two Point Studios", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1649080/header.jpg", 
+        description: "สร้างและบริหารมหาวิทยาลัยสุดป่วน จัดการหลักสูตรแปลกแหวกแนวให้เหล่านักศึกษา", 
+        features: ["สร้างมหาวิทยาลัยในฝัน", "วิชาเรียนตลกขบขัน (เช่น เวทมนตร์, สายลับ)", "ดูแลความสุขนักศึกษา", "จัดกิจกรรมชมรม", "กราฟิกการ์ตูนน่ารัก"], 
+        min: ["Intel Core i3-6100", "4 GB", "GTX 460", "6 GB", "Windows 10"], rec: ["Intel Core i5-6600", "8 GB", "GTX 1060", "6 GB", "Windows 10"] 
+    },
+    "american-truck-simulator": { 
+        name: "American Truck Simulator", platform: "PC", category: "SIMULATION", score: "9.5", developer: "SCS Software", year: "2016", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/270880/header.jpg", 
+        description: "ขับรถบรรทุกยักษ์สไตล์อเมริกันข้ามรัฐ ส่งสินค้าและชมวิวทิวทัศน์ชื่อดัง", 
+        features: ["รถบรรทุกอเมริกันแท้", "ถนนยาวไกลข้ามรัฐ", "ทิวทัศน์อันเป็นเอกลักษณ์", "บริหารธุรกิจขนส่ง", "ฟังวิทยุผ่อนคลายขณะขับ"], 
+        min: ["Intel Core i5", "8 GB", "GTX 760", "25 GB", "Windows 10"], rec: ["Intel Core i7", "16 GB", "GTX 1660", "25 GB", "Windows 10"] 
+    },
+
+    // ================= หมวด ADVENTURE (เพิ่มเติม) =================
+    "resident-evil-4-remake": { 
+        name: "Resident Evil 4", platform: "PC / Console", category: "ADVENTURE", score: "9.7", developer: "Capcom", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg", 
+        description: "ลีออนกลับมาอีกครั้งในภารกิจช่วยลูกสาวประธานาธิบดีจากหมู่บ้านปริศนา", 
+        features: ["เกมเพลย์ยิงซอมบี้สุดระทึก", "กราฟิกรีเมคใหม่สยองขวัญกว่าเดิม", "ระบบปัดป้องด้วยมีด (Parry)", "ไขปริศนาสไตล์ RE", "พ่อค้าขายของสุดคลาสสิก"], 
+        min: ["AMD Ryzen 3 1200", "8 GB", "GTX 1050 Ti", "73 GB", "Windows 10"], rec: ["AMD Ryzen 5 3600", "16 GB", "GTX 1070", "73 GB", "Windows 10"] 
+    },
+    "control": { 
+        name: "Control Ultimate Edition", platform: "PC / Console", category: "ADVENTURE", score: "8.9", developer: "Remedy Entertainment", year: "2020", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/870780/header.jpg", 
+        description: "รับบทผู้อำนวยการหน่วยงานลึกลับ ใช้พลังจิตต่อสู้ในอาคารที่เปลี่ยนรูปร่างได้", 
+        features: ["พลังจิตปาของใส่ศัตรู", "บรรยากาศลึกลับซับซ้อน", "ปืนเปลี่ยนร่างได้", "โชว์เทคโนโลยี Ray Tracing", "เนื้อเรื่องแหวกแนว"], 
+        min: ["Intel Core i5-4690", "8 GB", "GTX 780", "42 GB", "Windows 10"], rec: ["Intel Core i5-7600K", "16 GB", "GTX 1060", "42 GB", "Windows 10"] 
+    },
+    "jedi-survivor": { 
+        name: "STAR WARS Jedi: Survivor", platform: "PC / Console", category: "ADVENTURE", score: "8.7", developer: "Respawn", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1774580/header.jpg", 
+        description: "คัล เคสทิส กลายเป็นเจไดเต็มตัว ผจญภัยหลบหนีการไล่ล่าของจักรวรรดิ", 
+        features: ["ท่าร่างดาบเลเซอร์ 5 แบบ", "ดาวดวงใหม่กว้างใหญ่ให้สำรวจ", "ปริศนาเจได", "ระบบต่อสู้เข้มข้น", "เนื้อเรื่องจักรวาล Star Wars"], 
+        min: ["Intel Core i7-7700", "8 GB", "GTX 1070", "155 GB", "Windows 10"], rec: ["Intel Core i5 11600K", "16 GB", "RTX 2070", "155 GB", "Windows 10"] 
+    },
+    "plague-tale-requiem": { 
+        name: "A Plague Tale: Requiem", platform: "PC / Console", category: "ADVENTURE", score: "9.0", developer: "Asobo Studio", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1182900/header.jpg", 
+        description: "การเดินทางหนีตายของสองพี่น้อง ท่ามกลางดงหนูนรกและทหารรับจ้าง", 
+        features: ["ฝูงหนูนับแสนตัวอลังการ", "เนื้อเรื่องดราม่าเข้มข้น", "ลอบเร้นและเอาชีวิตรอด", "งานภาพสวยงามระดับ Next-gen", "หน้าไม้และอุปกรณ์เล่นแร่แปรธาตุ"], 
+        min: ["Intel Core i5-4690K", "16 GB", "GTX 970", "55 GB", "Windows 10"], rec: ["Intel Core i7-8700K", "16 GB", "RTX 3070", "55 GB", "Windows 10"] 
+    },
+    "tomb-raider-shadow": { 
+        name: "Shadow of the Tomb Raider", platform: "PC / Console", category: "ADVENTURE", score: "8.8", developer: "Eidos-Montréal", year: "2018", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2382140/header.jpg", 
+        description: "บทสรุปจุดกำเนิดของลาร่า ครอฟต์ สู่การเป็นนักล่าสุสานในป่าดงดิบมรณะ", 
+        features: ["สำรวจสุสานซับซ้อน", "พรางตัวพอกโคลนลอบสังหาร", "สภาพแวดล้อมป่าดิบชื้น", "แก้ปริศนาสุดอันตราย", "ภาพสวยรองรับ Ray Tracing"], 
+        min: ["Intel Core i3-3220", "8 GB", "GTX 660", "40 GB", "Windows 10"], rec: ["Intel Core i7-4770K", "16 GB", "GTX 1060", "40 GB", "Windows 10"] 
+    },
+
+    // ================= หมวด SPORT (เพิ่มเติม) =================
+    "riders-republic": { 
+        name: "Riders Republic", platform: "PC / Console", category: "SPORT", score: "8.5", developer: "Ubisoft", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2225070/header.jpg", 
+        description: "สนามเด็กเล่นกีฬาเอ็กซ์ตรีมขนาดใหญ่ แข่งจักรยาน สโนว์บอร์ด และเครื่องร่อน", 
+        features: ["กีฬาเอ็กซ์ตรีมหลายประเภท", "แผนที่อุทยานแห่งชาติรวมกัน", "แข่ง Mass Race พร้อมกัน 64 คน", "โลกออนไลน์เต็มไปด้วยผู้เล่น", "ปรับแต่งตัวละครอิสระ"], 
+        min: ["Intel Core i5-4460", "8 GB", "GTX 970", "20 GB", "Windows 10"], rec: ["Intel Core i7-4790", "16 GB", "GTX 1060", "20 GB", "Windows 10"] 
+    },
+    "session-skate-sim": { 
+        name: "Session: Skate Sim", platform: "PC / Console", category: "SPORT", score: "8.2", developer: "crea-ture Studios", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/861650/header.jpg", 
+        description: "เกมสเกตบอร์ดที่เน้นความสมจริง บังคับเท้าซ้ายและขวาด้วยอนาล็อกสติ๊ก", 
+        features: ["ระบบบังคับสมจริงยากท้าทาย", "จำลองเมืองยอดฮิตของนักสเกต", "ไม่มีระบบปุ่มกดคอมโบ", "ตัดต่อวิดีโอในเกมได้", "เปลี่ยนมุมกล้องแบบเลนส์ฟิชอาย"], 
+        min: ["Intel Core i5-4670", "8 GB", "GTX 1060", "11 GB", "Windows 10"], rec: ["Intel Core i7-7700", "12 GB", "RTX 2070", "11 GB", "Windows 10"] 
+    },
+    "efootball-2024": { 
+        name: "eFootball 2024", platform: "PC / Console", category: "SPORT", score: "7.5", developer: "Konami", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/header.jpg", 
+        description: "วิวัฒนาการจาก PES สู่เกมฟุตบอลเล่นฟรี (Free-to-Play) ปะทะผู้เล่นทั่วโลก", 
+        features: ["เล่นฟรี", "สร้างทีม Dream Team", "อัปเดตสถิตินักเตะตามจริง", "เล่นข้ามแพลตฟอร์มได้", "ลิขสิทธิ์สโมสรพาร์ทเนอร์"], 
+        min: ["Intel Core i5-2300", "8 GB", "GTX 660 Ti", "50 GB", "Windows 10"], rec: ["Intel Core i5-7600", "8 GB", "GTX 1060", "50 GB", "Windows 10"] 
+    },
+    "pga-tour-2k23": { 
+        name: "PGA TOUR 2K23", platform: "PC / Console", category: "SPORT", score: "8.4", developer: "HB Studios", year: "2022", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1351170/header.jpg", 
+        description: "จำลองการตีกอล์ฟระดับอาชีพ พร้อมสนามกอล์ฟและนักกอล์ฟชื่อดังระดับโลก", 
+        features: ["ระบบสวิงกอล์ฟสมจริง", "โหมด MyCAREER", "นักกอล์ฟโปรชายและหญิง", "สร้างสนามกอล์ฟเองได้", "แฟชั่นชุดกอล์ฟลิขสิทธิ์"], 
+        min: ["Intel Core i5-7660U", "6 GB", "GTX 670", "12 GB", "Windows 10"], rec: ["Intel Core i5-4670", "8 GB", "GTX 960", "12 GB", "Windows 10"] 
+    },
+    "madden-nfl-24": { 
+        name: "Madden NFL 24", platform: "PC / Console", category: "SPORT", score: "7.8", developer: "EA Tiburon", year: "2023", 
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2140330/header.jpg", 
+        description: "เกมอเมริกันฟุตบอลสุดฮิต มาพร้อมระบบ FieldSENSE และแอนิเมชันที่ไหลลื่นขึ้น", 
+        features: ["ระบบแอนิเมชัน FieldSENSE", "มินิเกมพัฒนาทักษะ", "โหมด Franchise", "Cross-play ออนไลน์", "ยกระดับกราฟิกนักกีฬา"], 
+        min: ["Intel Core i5-6600K", "10 GB", "GTX 1050 Ti", "50 GB", "Windows 10"], rec: ["Intel Core i7-8700K", "12 GB", "RTX 3060", "50 GB", "Windows 10"] 
     }
 };
