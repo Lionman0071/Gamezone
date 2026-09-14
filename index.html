@@ -151,6 +151,37 @@ document.addEventListener("gamesDataLoaded", () => {
         `;
     }).join('');
 });
+function renderIndex() {
+    const grid = document.getElementById('popular-games-grid');
+    if (!grid) return;
+    
+    // ดึงมาจาก Global Variable (ใช้ window.gamesDatabase)
+    const gamesArray = Object.entries(window.gamesDatabase).map(([id, game]) => ({ id, ...game }));
+    const popularGames = gamesArray.slice(0, 4); 
+    
+    grid.innerHTML = popularGames.map((game, index) => {
+        const delay = index * 0.1;
+        return `
+        <a class="game-card" style="animation-delay: ${delay}s;" href="game-detail.html?game=${game.id}">
+            <div class="game-cover">
+                <img src="${game.image}" alt="${game.name}">
+            </div>
+            <div class="game-info">
+                <span class="tag">${game.platform.toUpperCase()}</span>
+                <h3>${game.name}</h3>
+                <p>${game.description}</p>
+            </div>
+        </a>
+        `;
+    }).join('');
+}
+
+// เช็กว่าถ้าข้อมูลโหลดเสร็จแล้วให้เรนเดอร์เลย ถ้ายังให้รอสัญญาณ
+if (window.isGamesDataLoaded) {
+    renderIndex();
+} else {
+    document.addEventListener("gamesDataLoaded", renderIndex);
+}
 </script>
 <script src="chatbot-widget.js"></script>
 <script src="chatbot.js"></script>

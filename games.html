@@ -64,12 +64,21 @@ document.addEventListener("gamesDataLoaded", () => {
     
     const gamesArray = Object.entries(gamesDatabase).map(([id, game]) => ({ id, ...game }));
 
+    function renderGamesPage() {
+    const grid = document.getElementById("gamesLibrary");
+    const gameSearch = document.getElementById("gameSearch");
+    const gameFilters = document.querySelectorAll(".game-filter");
+    let currentFilter = "all";
+    
+    const gamesArray = Object.entries(window.gamesDatabase).map(([id, game]) => ({ id, ...game }));
+
     function renderGames() {
         const search = gameSearch.value.toLowerCase();
         
         const filteredGames = gamesArray.filter(game => {
             const matchSearch = game.name.toLowerCase().includes(search);
-            const matchCategory = currentFilter === "all" || game.category.toLowerCase() === currentFilter;
+            // หมวดหมู่จาก IGDB จะยาว เช่น "ROLE-PLAYING (RPG)" เราดักแค่ให้มันมีคำว่า rpg ก็พอ
+            const matchCategory = currentFilter === "all" || game.category.toLowerCase().includes(currentFilter);
             return matchSearch && matchCategory;
         });
 
@@ -82,7 +91,7 @@ document.addEventListener("gamesDataLoaded", () => {
                         <img src="${game.image}" alt="${game.name}">
                     </div>
                     <div class="game-info">
-                        <span class="tag">${game.category.toUpperCase()}</span>
+                        <span class="tag">${game.category}</span>
                         <h3>${game.name}</h3>
                         <p>${game.description}</p>
                     </div>
@@ -107,6 +116,13 @@ document.addEventListener("gamesDataLoaded", () => {
             renderGames();
         });
     });
+}
+
+if (window.isGamesDataLoaded) {
+    renderGamesPage();
+} else {
+    document.addEventListener("gamesDataLoaded", renderGamesPage);
+}
 });
 </script>
 <script src="chatbot-widget.js"></script>
