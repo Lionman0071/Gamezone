@@ -8,6 +8,7 @@ function getDynamicContext() {
 1. แนะนำ เปรียบเทียบ และให้ข้อมูลเกี่ยวกับเกม PC เท่านั้น
 2. ให้คำปรึกษาเรื่องสเปกคอมพิวเตอร์ จัดสเปก หรือวิเคราะห์ฮาร์ดแวร์อย่างผู้เชี่ยวชาญ
 3. แนะนำแนวทางการเล่น (เทคนิค, ไกด์, วิธีผ่านด่าน) ของเกมต่างๆ
+4. หากผู้ใช้ถามหาช่องทางเล่น ซื้อที่ไหน หรือขอลิงก์ ให้แนบลิงก์ Steam คืนไปให้เสมอ
 กฎ: ตอบเป็นภาษาไทย เป็นกันเอง กระชับ และ ห้ามใช้สัญลักษณ์ Markdown (เช่น ** หรือ #) เพราะข้อความจะพัง`;
 
     if (window.location.pathname.includes('game-detail.html')) {
@@ -16,18 +17,23 @@ function getDynamicContext() {
         
         if (gameKey && typeof gamesDatabase !== 'undefined' && gamesDatabase[gameKey]) {
             const game = gamesDatabase[gameKey];
+            
+            // สร้างลิงก์ค้นหาเกมบน Steam อัตโนมัติจากชื่อเกม
+            const steamSearchUrl = `https://store.steampowered.com/search/?term=${encodeURIComponent(game.name)}`;
+            
             baseContext += `\n\n[ข้อมูลสำคัญมาก]: ขณะนี้ผู้ใช้กำลังดูข้อมูลเกมชื่อ "${game.name}" อยู่บนหน้าจอ
 ข้อมูลของเกมนี้:
 - หมวดหมู่: ${game.category}
 - แพลตฟอร์ม: ${game.platform}
 - ผู้พัฒนา: ${game.developer}
 - คะแนน: ${game.score}/10
-- เนื้อเรื่อง/รายละเอียด: ${game.description}
+- เนื้อเรื่อง: ${game.description}
 - จุดเด่น: ${game.features.join(", ")}
+- ลิงก์ Steam: ${steamSearchUrl}
 - สเปกขั้นต่ำ: CPU ${game.min[0]}, RAM ${game.min[1]}, GPU ${game.min[2]}, ใช้พื้นที่ ${game.min[3]}
 - สเปกแนะนำ: CPU ${game.rec[0]}, RAM ${game.rec[1]}, GPU ${game.rec[2]}, ใช้พื้นที่ ${game.rec[3]}
 
-หากผู้ใช้ถามลอยๆ เช่น "เกมนี้สเปกเท่าไหร่", "ผ่านด่านยังไง", "สนุกไหม" ให้เข้าใจทันทีว่าหมายถึงเกม "${game.name}" และใช้ข้อมูลด้านบนตอบกลับได้เลย`;
+หากผู้ใช้ถามลอยๆ เช่น "ขอลิงก์หน่อย", "เกมนี้ซื้อที่ไหน", "สเปกเท่าไหร่" ให้เข้าใจทันทีว่าหมายถึงเกม "${game.name}" และดึงข้อมูล/ลิงก์ด้านบนตอบกลับได้เลย`;
         }
     }
     return baseContext;
